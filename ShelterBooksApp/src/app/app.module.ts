@@ -23,7 +23,7 @@ const routes: Route[] = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',

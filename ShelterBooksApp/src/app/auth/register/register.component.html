@@ -1,49 +1,49 @@
-<div class = "container-fluid sfondo">
+<div class = "container-fluid text-center pt-3">
 
   <div class="register-container">
-    <div class="register-header">
-        <h2>Registrazione al Portale Gastronomia</h2>
-        <p>Unisciti a noi e scopri le migliori gastronomie!</p>
+    <div class="register-header mb-5">
+        <h2>registrati su shelterbooks</h2>
+        <p>inserisci i tuoi dati per unirti a milioni di lettori come te</p>
     </div>
-    <div class="register-form">
-        <div class="form-group">
-            <label for="name">Nome:</label>
-            <input id="name" [(ngModel)]="name" />
+    <div class="register-form w-50 container">
+        <div class="form-group mb-3">
+            <label for="name" class="form-label">Nome</label><br>
+            <input type="text" class="form-control border border-dark" id="name" [(ngModel)]="name" />
         </div>
-        <div class="form-group">
-            <label for="surname">Cognome:</label>
-            <input id="surname" [(ngModel)]="surname" />
+        <div class="form-group mb-3">
+            <label for="surname" class="form-label">Cognome</label><br>
+            <input type="text" class="form-control border border-dark" id="surname" [(ngModel)]="surname" />
         </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input id="email" [(ngModel)]="email" />
+        <div class="form-group mb-3">
+            <label for="email" class="form-label">Email</label><br>
+            <input type="email" class="form-control border border-dark" id="email" [(ngModel)]="email" />
         </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input id="password" [(ngModel)]="password" type="password" />
+        <div class="form-group mb-3">
+            <label for="password" class="form-label">Password</label><br>
+            <input type="password" class="form-control border border-dark" id="password" [(ngModel)]="password" type="password" />
         </div>
-        <div class="form-group">
-            <label for="addressName">Indirizzo:</label>
-            <input id="addressName" [(ngModel)]="addressName" />
+        <div class="form-group mb-3">
+            <label for="addressName" class="form-label">Indirizzo</label><br>
+            <input type="text" class="form-control border border-dark" id="addressName" [(ngModel)]="addressName" />
         </div>
-        <div class="form-group">
-          <label for="postalCode">Codice Postale:</label>
-          <input id="postalCode" [(ngModel)]="postalCode" />
+        <div class="form-group mb-3">
+          <label for="postalCode" class="form-label">Codice Postale</label><br>
+          <input type="text" class="form-control border border-dark" id="postalCode" [(ngModel)]="postalCode" />
         </div>
-        <div class="form-group">
-          <label for="city">Città:</label>
-          <input id="city" [(ngModel)]="city" />
+        <div class="form-group mb-3">
+          <label for="city" class="form-label">Città</label><br>
+          <input type="text" class="form-control border border-dark" id="city" [(ngModel)]="city" />
         </div>
-        <div class="form-group">
-          <label for="district">Regione:</label>
-          <input id="district" [(ngModel)]="district" />
+        <div class="form-group mb-3">
+          <label for="district" class="form-label">Regione</label><br>
+          <input type="text" class="form-control border border-dark" id="district" [(ngModel)]="district" />
         </div>
-        <div class="form-group">
-          <label for="country">Nazione:</label>
-          <input id="country" [(ngModel)]="country" />
+        <div class="form-group mb-3">
+          <label for="country" class="form-label">Nazione</label><br>
+          <input type="text" class="form-control border border-dark" id="country" [(ngModel)]="country" />
         </div>
-        <button class="register-button" (click)="register()">Registrati</button>
+        <button type="submit" class="btn" (click)="register()">Registrati</button>
         <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
     </div>
   </div>
-</div>;
+</div>

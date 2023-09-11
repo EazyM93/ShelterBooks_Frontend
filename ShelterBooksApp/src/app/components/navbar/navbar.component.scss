@@ -1,3 +1,20 @@
+nav, .navbar-brand{
+  background-color: rgb(59, 147, 118);
+  text-transform: uppercase;
+}
+
+.navbar-brand{
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+#booksTitle{
+  font-weight: lighter;
+}
+
 a{
-  color: white;
+  color: white!important;
+  &:hover{
+    color: rgb(239, 210, 47)!important;
+  }
 }
