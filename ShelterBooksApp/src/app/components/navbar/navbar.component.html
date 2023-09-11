@@ -1,6 +1,14 @@
 <nav class="navbar navbar-expand-lg rounded-4 m-3">
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">shelter<span id="booksTitle">books</span></a>
+
+    <div *ngIf="userLogged; else noLoggedUser">
+      <button type="button" class="btn btn-danger text-white" (click)="logout()">Logout</button>
+    </div>
+
+    <ng-template #noLoggedUser>
       <a class="nav-link" [routerLink]="['login']">Login</a>
+    </ng-template>
+
   </div>
 </nav>
