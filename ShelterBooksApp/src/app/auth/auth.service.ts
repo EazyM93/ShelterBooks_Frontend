@@ -40,7 +40,7 @@ export class AuthService {
   }
 
   getCurrentUserInfo(): Observable<any> {
-    return this.http.get<any>('http://localhost:3001/users/current');
+    return this.http.get<any>('http://localhost:3001/users/getCurrent');
   }
 
   logout() {
