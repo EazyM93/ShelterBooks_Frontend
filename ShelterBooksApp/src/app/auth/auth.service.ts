@@ -39,6 +39,10 @@ export class AuthService {
     return this.http.post<any>('http://localhost:3001/auth/register', newUser);
   }
 
+  getCurrentUserInfo(): Observable<any> {
+    return this.http.get<any>('http://localhost:3001/users/current');
+  }
+
   logout() {
     localStorage.removeItem('token');
     return this.http.post<any>('http://localhost:3001/auth/logout', null);
