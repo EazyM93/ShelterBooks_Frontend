@@ -9,11 +9,22 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class NavbarComponent implements OnInit, DoCheck {
 
   userLogged: boolean = false;
+  currentUserStatus: string = '';
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+
     this.userLogged = localStorage.getItem('token') !== null;
+
+    if(this.userLogged !== false){
+
+      this.authService.getCurrentUserInfo().subscribe(userInfo => {
+        this.currentUserStatus = userInfo.role;
+      });
+
+    }
+
   }
 
   ngDoCheck(): void {
