@@ -8,7 +8,7 @@ export class ApiShelterService {
 
   constructor(private _http:HttpClient) { }
 
-  getdata(){
+  getBooks(){
     return this._http.get('http://localhost:3001/books');
   }
 }

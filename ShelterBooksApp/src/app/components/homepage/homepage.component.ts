@@ -8,13 +8,13 @@ import { ApiShelterService } from 'src/app/service/api-shelter.service';
 })
 export class HomepageComponent implements OnInit {
 
-  booksArray: [] | any;
+  booksArray: any[] = [];
 
   constructor(private _apiservice:ApiShelterService) { }
 
   ngOnInit(): void {
-    this._apiservice.getdata().subscribe(res=>{
-      this.booksArray=res;
+    this._apiservice.getBooks().subscribe((response: any)=>{
+      this.booksArray=response;
     })
   }
 

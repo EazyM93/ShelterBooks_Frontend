@@ -4,7 +4,7 @@
 
     <div class="d-flex align-items-center">
 
-      <div *ngIf="currentUserStatus=='ADMIN' && userLogged" class="me-1">
+      <div *ngIf="currentUserStatus && userLogged" class="me-1">
         <a href=""><button type="button" class="btn text-white purple">gestore</button></a>
       </div>
 
