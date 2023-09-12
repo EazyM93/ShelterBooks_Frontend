@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +17,16 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserInfo();
+
+    // check if user is logged in and current status when route is changed
+    // NavigationEnd Router
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd)
+      )
+      .subscribe(() => {
+        this.getUserInfo();
+      });
   }
 
 
@@ -35,6 +46,7 @@ export class NavbarComponent implements OnInit {
 
   logout(){
     this.authService.logout();
+    this.userLogged = false;
   }
 
 }
