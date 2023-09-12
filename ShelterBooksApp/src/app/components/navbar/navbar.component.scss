@@ -25,5 +25,8 @@ a{
 
 .purple{
   background-color: rgb(191, 67, 191);
+  &:hover{
+    filter: brightness(85%);
+  }
 }
 

@@ -29,6 +29,14 @@ export class NavbarComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     this.userLogged = localStorage.getItem('token') !== null
+
+    if(this.userLogged !== false){
+
+      this.authService.getCurrentUserInfo().subscribe(userInfo => {
+        this.currentUserStatus = userInfo.role;
+      });
+
+    }
   }
 
   logout(){
