@@ -1,7 +1,8 @@
-<ng-container >
+<div class="row row-cols-4">
 
-  <div class="row row-cols-4">
-    <div *ngFor="let book of booksArray" class="col mb-3">
+  <div *ngFor="let book of booksArray">
+
+    <div class="col mb-3">
 
       <div class="card h-100">
         <img [src]="book.coverLink" class="card-img-top" alt="card_image" />
@@ -11,6 +12,9 @@
       </div>
 
     </div>
+
   </div>
 
-</ng-container>
+</div>
+
+

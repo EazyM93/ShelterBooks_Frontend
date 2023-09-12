@@ -14,7 +14,8 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this._apiservice.getBooks().subscribe((response: any)=>{
-      this.booksArray=response;
+      this.booksArray=response.content;
+      console.log(this.booksArray);
     })
   }
 
