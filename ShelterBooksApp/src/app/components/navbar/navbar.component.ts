@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/auth/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, DoCheck {
 
   userLogged: boolean = false;
 
@@ -14,6 +14,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.userLogged = localStorage.getItem('token') !== null;
+  }
+
+  ngDoCheck(): void {
+    this.userLogged = localStorage.getItem('token') !== null
   }
 
   logout(){
