@@ -14,33 +14,12 @@ import { BookManagerComponent } from './components/book-manager/book-manager.com
 import { ManagerComponent } from './components/manager/manager.component';
 
 const routes: Route[] = [
-  {
-    path: '',
-    redirectTo: 'homepage',
-    pathMatch: 'full'
-  },
-  {
-    path: 'homepage',
-    component: HomepageComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'manager',
-    component: ManagerComponent,
-    children: [
-      {
-        path: 'bookManager',
-        component: BookManagerComponent
-      }
-    ]
-  }
+  { path: '', redirectTo: 'homepage',pathMatch: 'full' },
+  { path: 'homepage', component: HomepageComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'manager', component: ManagerComponent },
+  { path: 'manager/bookManager', component: BookManagerComponent }
 ];
 
 @NgModule({

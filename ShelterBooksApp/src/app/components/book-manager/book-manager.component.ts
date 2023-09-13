@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookManagerComponent implements OnInit {
 
+  yesNoValue: string = 'UNAVAILABLE';
+
   constructor() { }
 
   ngOnInit(): void {
