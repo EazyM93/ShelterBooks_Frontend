@@ -14,4 +14,23 @@ export class ApiShelterService {
   getBooks(): Observable<any[]> {
     return this._http.get<any>(`${this.jsonShelterUrl}/books`);
   }
+
+  saveBook(
+    isbn: string,
+	  title: string,
+    coverLink: string,
+    author: string,
+    publisher: string,
+	  pages: number,
+    price: number,
+    publicationYear: number,
+    genre: string,
+    availableCopies: number,
+	  availableEbook: string,
+	  ebookSize: number,
+    ebookPrice: number
+  ): Observable<any> {
+    const newBook = { isbn , title, coverLink, author, publisher, pages, price, publicationYear, genre, availableCopies, availableEbook, ebookSize, ebookPrice };
+    return this._http.post<any>(`${this.jsonShelterUrl}/books`, newBook);
+  }
 }
