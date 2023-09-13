@@ -10,6 +10,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { TokenInterceptor } from './auth/token.interceptor';
+import { BookManagerComponent } from './components/book-manager/book-manager.component';
+import { ManagerComponent } from './components/manager/manager.component';
 
 const routes: Route[] = [
   {
@@ -28,6 +30,16 @@ const routes: Route[] = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'manager',
+    component: ManagerComponent,
+    children: [
+      {
+        path: 'bookManager',
+        component: BookManagerComponent
+      }
+    ]
   }
 ];
 
@@ -37,7 +49,9 @@ const routes: Route[] = [
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    HomepageComponent
+    HomepageComponent,
+    BookManagerComponent,
+    ManagerComponent
   ],
   imports: [
     BrowserModule,

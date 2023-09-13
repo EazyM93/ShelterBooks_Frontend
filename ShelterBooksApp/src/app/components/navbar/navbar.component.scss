@@ -1,10 +1,10 @@
 nav, .navbar-brand{
-  background-color: rgb(59, 147, 118);
+  background-color: #006165;
 }
 
 .btn, nav, .navbar-brand, a{
   text-transform: uppercase;
-  font-size: small;
+  font-size: medium;
 }
 
 .navbar-brand{
@@ -23,8 +23,10 @@ a{
   }
 }
 
-.purple{
-  background-color: rgb(191, 67, 191);
+.BFD0D1{
+  background-color: #BFD0D1;
+  color: #006165;
+  font-weight: bold;
   &:hover{
     filter: brightness(85%);
   }
