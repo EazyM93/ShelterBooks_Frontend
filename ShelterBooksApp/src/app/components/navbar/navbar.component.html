@@ -4,8 +4,8 @@
 
     <div class="d-flex align-items-center">
 
-      <div *ngIf="currentUserStatus && userLogged" class="me-1">
-        <a class="nav-link" [routerLink]="['manager']"><button type="button" class="btn BFD0D1">gestore</button></a>
+      <div *ngIf="currentUserStatus && userLogged" class="me-5">
+        <a class="nav-link" [routerLink]="['bookManager']"><button type="button" class="btn d37f36">libri</button></a>
       </div>
 
       <div *ngIf="userLogged; else noLoggedUser">

@@ -11,15 +11,13 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { BookManagerComponent } from './components/book-manager/book-manager.component';
-import { ManagerComponent } from './components/manager/manager.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
   { path: 'homepage', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'manager', component: ManagerComponent },
-  { path: 'manager/bookManager', component: BookManagerComponent }
+  { path: 'bookManager', component: BookManagerComponent }
 ];
 
 @NgModule({
@@ -29,8 +27,7 @@ const routes: Route[] = [
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
-    BookManagerComponent,
-    ManagerComponent
+    BookManagerComponent
   ],
   imports: [
     BrowserModule,
