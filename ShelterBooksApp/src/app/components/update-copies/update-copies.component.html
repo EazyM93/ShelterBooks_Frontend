@@ -1,0 +1,21 @@
+<input type="text" class="form-control mb-3" id="title" aria-describedby="title" [(ngModel)]="title" name="title" (ngModelChange)="onTitleInputChange()" placeholder="cerca titolo del libro">
+
+<div id="tabBooks" class="p-3 rounded">
+  <div class="row row-cols-3 mb-2" style="text-transform: uppercase;">
+    <h4>titolo</h4>
+    <h4 class="text-center">copie magazzino</h4>
+    <h4 class="text-center">aggiorna copie</h4>
+  </div>
+
+  <div *ngFor="let book of booksArray">
+    <div class="row row-cols-3 align-items-center mb-3">
+      <p class="ps-3">{{book.title}}</p>
+      <p class="text-center">{{book.availableCopies}}</p>
+      <div class="text-center">
+        <button type="button" class="btn btn-success"><i class="bi bi-journal-plus text-white"></i></button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
