@@ -1,0 +1,131 @@
+<form>
+
+  <div class="mb-3">
+    <label for="isbn" class="form-label">isbn</label>
+    <input type="text" class="form-control" id="isbn" aria-describedby="isbn" [(ngModel)]="isbn" name="isbn">
+  </div>
+
+  <div class="mb-3">
+    <label for="title" class="form-label">titolo libro</label>
+    <input type="text" class="form-control" id="title" aria-describedby="title" [(ngModel)]="title" name="title">
+  </div>
+
+  <div class="mb-3">
+    <label for="coverLink" class="form-label">copertina libro</label>
+    <input type="text" class="form-control" id="coverLink" aria-describedby="coverLink" [(ngModel)]="coverLink" name="coverLink">
+  </div>
+
+  <div class="mb-3">
+    <label for="author" class="form-label">autore</label>
+    <input type="text" class="form-control" id="author" aria-describedby="author" [(ngModel)]="author" name="author">
+  </div>
+
+  <div class="mb-3">
+    <label for="publisher" class="form-label">casa editrice</label>
+    <input type="text" class="form-control" id="publisher" aria-describedby="publisher" [(ngModel)]="publisher" name="publisher">
+  </div>
+
+  <div class="mb-3 d-flex">
+
+    <div class="w-25 me-5">
+      <label for="pages" class="form-label">pagine libro</label>
+      <input type="number" class="form-control" id="pages" aria-describedby="pages" [(ngModel)]="pages" name="pages">
+    </div>
+
+    <div class="w-25 me-5">
+      <label for="price" class="form-label">prezzo</label>
+      <input type="number" class="form-control" id="price" aria-describedby="price" [(ngModel)]="price" name="price">
+    </div>
+
+    <div class="w-25 me-5">
+      <label for="availableCopies" class="form-label">copie disponibili</label>
+      <input type="number" class="form-control" id="availableCopies" aria-describedby="availableCopies" [(ngModel)]="availableCopies" name="availableCopies">
+    </div>
+
+  </div>
+
+  <div class="mb-3 d-flex">
+
+    <div class="w-25 me-5">
+      <label for="publicationYear" class="form-label" style="font-size: small;">anno pubblicazione</label>
+      <input type="number" class="form-control" id="publicationYear" aria-describedby="publicationYear" [(ngModel)]="publicationYear" name="publicationYear">
+    </div>
+
+    <div class="w-25 me-5">
+      <label for="genre" class="form-label">genere</label>
+      <select id="genre" class="form-select text-center" aria-label="genre" [(ngModel)]="genre" name="genre">
+        <option selected></option>
+        <option value="ART">arte</option>
+        <option value="ASTRONOMY">astronomia</option>
+        <option value="ADVENTURE">avventura</option>
+        <option value="CHILDREN">bambini</option>
+        <option value="BIOGRAPHY">biografia</option>
+        <option value="BUISNESS">business</option>
+        <option value="CINEMA">cinema</option>
+        <option value="CLASSIC">classici</option>
+        <option value="COOK">cucina</option>
+        <option value="ECONOMIC">economia</option>
+        <option value="SCI_FI">fantascienza</option>
+        <option value="FANTASY">fantasy</option>
+        <option value="PHILOSOPHY">filosofia</option>
+        <option value="EDUCATION">formazione</option>
+        <option value="PHOTOGRAPHY">fotografia</option>
+        <option value="COMIC">fumetti</option>
+        <option value="GARDENING">giardinaggio</option>
+        <option value="JOURNALISM">giornalismo</option>
+        <option value="YOUNG_ADULT">giovani adulti</option>
+        <option value="GRAPHIC_NOVEL">graphic novel</option>
+        <option value="GUIDE">guide</option>
+        <option value="MYSTERY">giallo</option>
+        <option value="HORROR">horror</option>
+        <option value="LINGUISTIC">linguistica</option>
+        <option value="MATHEMATICS">matematica</option>
+        <option value="MUSIC">musica</option>
+        <option value="NOIR">noir</option>
+        <option value="PARANORMAL">paranormale</option>
+        <option value="POETRY">poesia</option>
+        <option value="POLITICAL">politica</option>
+        <option value="PSYCHOLOGY">psicologia</option>
+        <option value="SHORT_STORIES">racconti brevi</option>
+        <option value="RELIGION">religione</option>
+        <option value="NOVEL">romanzo</option>
+        <option value="ROMANCE">romanzo rosa</option>
+        <option value="SCIENCE">scienza</option>
+        <option value="SOCIAL_SCIENCE">scienze sociali</option>
+        <option value="SPIRITUAL">spirituale</option>
+        <option value="SPORT">sport</option>
+        <option value="HISTORICAL">storico</option>
+        <option value="TECHNOLOGY">tecnologia</option>
+        <option value="THRILLER">thriller</option>
+        <option value="TRUE_CRIME">true crime</option>
+        <option value="TRAVEL">viaggi</option>
+      </select>
+    </div>
+
+    <div class="w-25">
+      <!-- per utilizzare [(ngModel)]="yesNoValue" si deve aggiungere [ngModelOptions]="{standalone: true} -->
+      <label for="availableEbook" class="form-label">ebook disponibile?</label>
+        <select id="availableEbook" [(ngModel)]="availableEbook" [ngModelOptions]="{standalone: true}" class="form-select text-center" aria-label="availableEbook">
+          <option value="UNAVAILABLE">no</option>
+          <option value="AVAILABLE">si</option>
+        </select>
+    </div>
+
+  </div>
+
+  <div class="mb-3 d-flex">
+
+    <div class="me-5">
+      <label for="ebookSize" class="form-label">dimensione ebook (mb)</label>
+      <input type="number" class="form-control" id="ebookSize" aria-describedby="ebookSize" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookSize" name="number">
+    </div>
+
+    <div class="me-5">
+      <label for="ebookPrice" class="form-label">prezzo ebook</label>
+      <input type="number" class="form-control" id="ebookPrice" aria-describedby="ebookPrice" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookPrice" name="ebookPrice">
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="save()">Submit</button>
+</form>
