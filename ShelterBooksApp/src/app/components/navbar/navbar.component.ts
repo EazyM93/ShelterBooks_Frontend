@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
   getUserInfo(): void{
 
     // check if a user/admin is logged in
-    this.userLogged = localStorage.getItem('token') !== null
+    this.userLogged = localStorage.getItem('token') !== null;
 
     // check if user is admin
     if(this.userLogged !== false){
@@ -47,6 +47,7 @@ export class NavbarComponent implements OnInit {
   logout(){
     this.authService.logout();
     this.userLogged = false;
+    this.currentUserStatus = false;
     this.router.navigate(['/homepage']);
   }
 
