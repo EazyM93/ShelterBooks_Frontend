@@ -43,6 +43,7 @@ export class ApiShelterService {
   }
 
   filterBooks(
+    isbn: string,
     title: string,
     author: string,
     publisher: string,
@@ -53,6 +54,7 @@ export class ApiShelterService {
     sort: string
   ): Observable<any>{
     const params = new HttpParams()
+      .set('isbn', isbn)
       .set('title', title)
       .set('author', author)
       .set('publisher', publisher)

@@ -1,15 +1,19 @@
-<input type="text" class="form-control mb-3" id="title" aria-describedby="title" [(ngModel)]="title" name="title" (ngModelChange)="onTitleInputChange()" placeholder="cerca titolo del libro">
+<input type="text" class="form-control mb-3" id="title" aria-describedby="title" [(ngModel)]="title" name="title" (ngModelChange)="onTitleInputChange()" placeholder="cerca per titolo" autocomplete="off">
+
+<input type="text" class="form-control mb-3" id="isbn" aria-describedby="isbn" [(ngModel)]="isbn" name="isbn" (ngModelChange)="onIsbnInputChange()" placeholder="cerca per isbn" autocomplete="off">
 
 <div id="tabBooks" class="p-3 rounded">
-  <div class="row row-cols-3 mb-2" style="text-transform: uppercase;">
+  <div class="row row-cols-4 mb-2" style="text-transform: uppercase;">
     <h4>titolo</h4>
+    <h4 class="text-center">isbn</h4>
     <h4 class="text-center">copie magazzino</h4>
     <h4 class="text-center">aggiorna copie</h4>
   </div>
 
   <div *ngFor="let book of booksArray; let i = index">
-    <div class="row row-cols-3 align-items-center mb-3">
+    <div class="row row-cols-4 align-items-center mb-3">
       <p class="ps-3">{{book.title}}</p>
+      <p class="text-center">{{book.isbn}}</p>
       <p class="text-center">{{book.availableCopies}}</p>
       <div class="text-center">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" [attr.data-bs-target]="'#modal' + i"><i class="bi bi-journal-plus text-white"></i></button>
@@ -27,7 +31,7 @@
               <div class="modal-body">
                 <p>Imposta numero di copie da aggiungere al magazzino</p>
                 <label for="addedCopies" class="form-label">copie disponibili</label>
-                <input type="number" class="form-control" id="availableCopies" aria-describedby="addedCopies" [(ngModel)]="numberCopies" name="addedCopies">
+                <input type="number" class="form-control" id="availableCopies" aria-describedby="addedCopies" [(ngModel)]="numberCopies" name="addedCopies" min="1">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>

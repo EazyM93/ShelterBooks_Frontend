@@ -1,57 +1,53 @@
 <form>
 
-  <div class="mb-3">
-    <label for="isbn" class="form-label">isbn</label>
-    <input type="text" class="form-control" id="isbn" aria-describedby="isbn" [(ngModel)]="isbn" name="isbn">
-  </div>
+  <div class="row row-cols-3">
 
-  <div class="mb-3">
-    <label for="title" class="form-label">titolo libro</label>
-    <input type="text" class="form-control" id="title" aria-describedby="title" [(ngModel)]="title" name="title">
-  </div>
+    <div class="mb-5">
+      <label for="isbn" class="form-label">isbn</label>
+      <input type="text" class="form-control" id="isbn" aria-describedby="isbn" [(ngModel)]="isbn" name="isbn">
+    </div>
 
-  <div class="mb-3">
-    <label for="coverLink" class="form-label">copertina libro</label>
-    <input type="text" class="form-control" id="coverLink" aria-describedby="coverLink" [(ngModel)]="coverLink" name="coverLink">
-  </div>
+    <div>
+      <label for="title" class="form-label">titolo libro</label>
+      <input type="text" class="form-control" id="title" aria-describedby="title" [(ngModel)]="title" name="title">
+    </div>
 
-  <div class="mb-3">
-    <label for="author" class="form-label">autore</label>
-    <input type="text" class="form-control" id="author" aria-describedby="author" [(ngModel)]="author" name="author">
-  </div>
+    <div class="mb-5">
+      <label for="coverLink" class="form-label">copertina libro</label>
+      <input type="text" class="form-control" id="coverLink" aria-describedby="coverLink" [(ngModel)]="coverLink" name="coverLink">
+    </div>
 
-  <div class="mb-3">
-    <label for="publisher" class="form-label">casa editrice</label>
-    <input type="text" class="form-control" id="publisher" aria-describedby="publisher" [(ngModel)]="publisher" name="publisher">
-  </div>
+    <div class="mb-5">
+      <label for="author" class="form-label">autore</label>
+      <input type="text" class="form-control" id="author" aria-describedby="author" [(ngModel)]="author" name="author">
+    </div>
 
-  <div class="mb-3 d-flex">
+    <div class="mb-5">
+      <label for="publisher" class="form-label">casa editrice</label>
+      <input type="text" class="form-control" id="publisher" aria-describedby="publisher" [(ngModel)]="publisher" name="publisher">
+    </div>
 
-    <div class="w-25 me-5">
+    <div class="mb-5">
       <label for="pages" class="form-label">pagine libro</label>
       <input type="number" class="form-control" id="pages" aria-describedby="pages" [(ngModel)]="pages" name="pages">
     </div>
 
-    <div class="w-25 me-5">
-      <label for="price" class="form-label">prezzo</label>
-      <input type="number" class="form-control" id="price" aria-describedby="price" [(ngModel)]="price" name="price">
+    <div class="mb-5">
+        <label for="price" class="form-label">prezzo</label>
+        <input type="number" class="form-control" id="price" aria-describedby="price" [(ngModel)]="price" name="price">
     </div>
 
-    <div class="w-25 me-5">
+    <div class="mb-5">
       <label for="availableCopies" class="form-label">copie disponibili</label>
       <input type="number" class="form-control" id="availableCopies" aria-describedby="availableCopies" [(ngModel)]="availableCopies" name="availableCopies">
     </div>
 
-  </div>
-
-  <div class="mb-3 d-flex">
-
-    <div class="w-25 me-5">
+    <div class="mb-5">
       <label for="publicationYear" class="form-label" style="font-size: small;">anno pubblicazione</label>
       <input type="number" class="form-control" id="publicationYear" aria-describedby="publicationYear" [(ngModel)]="publicationYear" name="publicationYear">
     </div>
 
-    <div class="w-25 me-5">
+    <div class="mb-5">
       <label for="genre" class="form-label">genere</label>
       <select id="genre" class="form-select text-center" aria-label="genre" [(ngModel)]="genre" name="genre">
         <option selected></option>
@@ -102,6 +98,10 @@
       </select>
     </div>
 
+  </div>
+
+  <div class="mb-5 d-flex">
+
     <div class="w-25">
       <!-- per utilizzare [(ngModel)]="yesNoValue" si deve aggiungere [ngModelOptions]="{standalone: true} -->
       <label for="availableEbook" class="form-label">ebook disponibile?</label>
@@ -113,7 +113,7 @@
 
   </div>
 
-  <div class="mb-3 d-flex">
+  <div class="mb-5 d-flex">
 
     <div class="me-5">
       <label for="ebookSize" class="form-label">dimensione ebook (mb)</label>

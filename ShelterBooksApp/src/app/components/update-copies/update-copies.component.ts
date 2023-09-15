@@ -11,22 +11,36 @@ export class UpdateCopiesComponent implements OnInit {
   booksArray: any[] = [];
 
   title: string = '';
+  isbn: string = '';
 
-  numberCopies: number = 0;
+  numberCopies: number = 1;
 
   constructor(private shelterService: ApiShelterService) { }
 
   ngOnInit(): void {
-    this.getBookList();
+    this.getBookListByTitle();
   }
 
   onTitleInputChange(): void {
-    this.getBookList();
+    this.getBookListByTitle();
   }
 
-  getBookList(): void {
+  onIsbnInputChange(): void {
+    this.getBookListByIsbn();
+  }
+
+  getBookListByTitle(): void {
     this.shelterService
-      .filterBooks(this.title, '', '', 0, 10000, '', 0, 'title')
+      .filterBooks('', this.title, '', '', 0, 10000, '', 0, 'title')
+      .subscribe((response: any) => {
+        this.booksArray=response.content;
+      }
+    );
+  }
+
+  getBookListByIsbn(): void {
+    this.shelterService
+      .filterBooks(this.isbn, '', '', '', 0, 10000, '', 0, 'title')
       .subscribe((response: any) => {
         this.booksArray=response.content;
       }
@@ -37,7 +51,7 @@ export class UpdateCopiesComponent implements OnInit {
     this.shelterService
       .updateCopies(idBookCopies, this.numberCopies)
       .subscribe(() => {
-        this.getBookList();
+        this.getBookListByTitle();
       });
 
 
