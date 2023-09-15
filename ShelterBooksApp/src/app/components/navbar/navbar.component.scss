@@ -40,8 +40,12 @@ a{
 .BFD0D1{
   background-color: #BFD0D1;
   color: #006165;
+  font-weight: bold;
   &:hover{
     filter: brightness(85%);
   }
 }
 
+#logout{
+  font-weight: bold;
+}

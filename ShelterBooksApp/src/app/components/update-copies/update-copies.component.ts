@@ -12,8 +12,7 @@ export class UpdateCopiesComponent implements OnInit {
 
   title: string = '';
 
-  idBook: string = '';
-  plusCopies: number = 0;
+  addedCopies: number = 0;
 
   constructor(private shelterService: ApiShelterService) { }
 
@@ -39,10 +38,11 @@ export class UpdateCopiesComponent implements OnInit {
     );
   }
 
-  // update(): void {
-  //   this.shelterService.updateCopies(
+  update(idBookCopies: string): void {
 
-  //   )
-  // }
+    this.shelterService
+      .updateCopies(idBookCopies, this.addedCopies)
+      .subscribe();
+  }
 
 }

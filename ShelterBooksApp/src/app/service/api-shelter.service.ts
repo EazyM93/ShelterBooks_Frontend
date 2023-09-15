@@ -36,10 +36,10 @@ export class ApiShelterService {
 
   updateCopies(
     idBook: string,
-    plusCopies: number
-  ){
-    const update = { idBook, plusCopies };
-    return this._http.post<any>(`${this.BooksUrl}`, update);
+    addedCopies: number
+  ): Observable<any>{
+    const copies = {idBook, addedCopies};
+    return this._http.post<any>(`${this.BooksUrl}/updateCopies`, copies);
   }
 
   filterBooks(

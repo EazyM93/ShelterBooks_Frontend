@@ -6,8 +6,8 @@
 
       <div *ngIf="currentUserStatus && userLogged">
         <div class="dropdown me-4">
-          <button class="btn dropdown-toggle d37f36" type="button" data-bs-toggle="dropdown" aria-expanded="false">gestionale</button>
-            <ul class="dropdown-menu d37f36">
+          <button class="btn dropdown-toggle BFD0D1" type="button" data-bs-toggle="dropdown" aria-expanded="false">gestionale</button>
+            <ul class="dropdown-menu BFD0D1">
               <li><a class="dropdown-item" [routerLink]="['bookManager']">libri</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -17,7 +17,7 @@
 
 
       <div *ngIf="userLogged; else noLoggedUser">
-        <button type="button" class="btn btn-danger text-white" (click)="logout()">logout</button>
+        <button id="logout" type="button" class="btn btn-danger text-white" (click)="logout()">logout</button>
       </div>
 
       <ng-template #noLoggedUser>
