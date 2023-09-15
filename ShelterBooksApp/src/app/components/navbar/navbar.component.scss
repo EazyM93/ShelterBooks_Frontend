@@ -23,6 +23,12 @@ a{
   }
 }
 
+.dropdown-item{
+  &:hover{
+    background-color: #d37f36;
+  }
+}
+
 .d37f36{
   background-color: #d37f36;
   color: white;

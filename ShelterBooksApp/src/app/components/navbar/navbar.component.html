@@ -4,8 +4,15 @@
 
     <div class="d-flex align-items-center">
 
-      <div *ngIf="currentUserStatus && userLogged" class="me-5">
-        <a class="nav-link" [routerLink]="['bookManager']"><button type="button" class="btn d37f36">gestione libri</button></a>
+      <div *ngIf="currentUserStatus && userLogged" class="dropdown me-4">
+        <button class="btn dropdown-toggle d37f36" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu d37f36">
+          <li><a class="dropdown-item" [routerLink]="['bookManager']">gestione libri</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
       </div>
 
       <div *ngIf="userLogged; else noLoggedUser">
