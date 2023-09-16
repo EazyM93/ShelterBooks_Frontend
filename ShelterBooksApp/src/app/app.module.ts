@@ -13,7 +13,6 @@ import { TokenInterceptor } from './auth/token.interceptor';
 import { BookManagerComponent } from './components/book-manager/book-manager.component';
 import { CreateBookComponent } from './components/create-book/create-book.component';
 import { UpdateCopiesComponent } from './components/update-copies/update-copies.component';
-import { ModifyBookComponent } from './components/modify-book/modify-book.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
@@ -22,8 +21,7 @@ const routes: Route[] = [
   { path: 'register', component: RegisterComponent },
   { path: 'bookManager', component: BookManagerComponent, children: [
     { path: 'createBook', component: CreateBookComponent },
-    { path: 'updateCopies', component: UpdateCopiesComponent },
-    { path: 'modifyBook', component: ModifyBookComponent }
+    { path: 'updateCopies', component: UpdateCopiesComponent }
   ]}
 ];
 
@@ -36,8 +34,7 @@ const routes: Route[] = [
     HomepageComponent,
     BookManagerComponent,
     CreateBookComponent,
-    UpdateCopiesComponent,
-    ModifyBookComponent
+    UpdateCopiesComponent
   ],
   imports: [
     BrowserModule,

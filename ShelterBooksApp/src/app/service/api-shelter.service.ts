@@ -11,6 +11,10 @@ export class ApiShelterService {
 
   constructor(private _http:HttpClient) { }
 
+  getBook(idBook: string): Observable<any> {
+    return this._http.get<any>(`${this.BooksUrl}/idBook/${idBook}`);
+  }
+
   getBooks(): Observable<any[]> {
     return this._http.get<any>(`${this.BooksUrl}`);
   }

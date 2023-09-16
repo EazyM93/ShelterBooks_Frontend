@@ -1,13 +1,17 @@
-<input type="text" class="form-control mb-3" id="title" aria-describedby="title" [(ngModel)]="title" name="title" (ngModelChange)="onTitleInputChange()" placeholder="cerca per titolo" autocomplete="off">
+<input type="text" class="form-control mb-3" id="title" aria-describedby="title" [(ngModel)]="titleFilter" name="title" (ngModelChange)="onTitleInputChange()" placeholder="cerca per titolo" autocomplete="off">
 
-<input type="text" class="form-control mb-3" id="isbn" aria-describedby="isbn" [(ngModel)]="isbn" name="isbn" (ngModelChange)="onIsbnInputChange()" placeholder="cerca per isbn" autocomplete="off">
+<input type="text" class="form-control mb-3" id="isbn" aria-describedby="isbn" [(ngModel)]="isbnFilter" name="isbn" (ngModelChange)="onIsbnInputChange()" placeholder="cerca per isbn" autocomplete="off">
 
 <div id="tabBooks" class="p-3 rounded">
   <div class="row row-cols-4 mb-2" style="text-transform: uppercase;">
     <h4>titolo</h4>
     <h4 class="text-center">isbn</h4>
     <h4 class="text-center">copie magazzino</h4>
-    <h4 class="text-center">aggiorna copie</h4>
+    <div class="row row-cols-2">
+      <h5 class="text-center">agg. copie</h5>
+      <h5 class="text-center">modifica</h5>
+    </div>
+
   </div>
 
   <div *ngFor="let book of booksArray; let i = index">
@@ -15,11 +19,17 @@
       <p class="ps-3">{{book.title}}</p>
       <p class="text-center">{{book.isbn}}</p>
       <p class="text-center">{{book.availableCopies}}</p>
-      <div class="text-center">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" [attr.data-bs-target]="'#modal' + i"><i class="bi bi-journal-plus text-white"></i></button>
+      <div class="row row-cols-2">
+        <div class="text-center">
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" [attr.data-bs-target]="'#copies' + i"><i class="bi bi-journal-plus text-white"></i></button>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#modify' + i" (click)="getBookInfo(book.idBook)"><i class="bi bi-info-square-fill text-white" ></i></button>
+        </div>
       </div>
 
-      <div [id]="'modal' + i" class="modal fade" tabindex="-1">
+
+      <div [id]="'copies' + i" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -29,12 +39,159 @@
             <form>
 
               <div class="modal-body">
-                <p>Imposta numero di copie da aggiungere al magazzino</p>
-                <label for="addedCopies" class="form-label">copie disponibili</label>
-                <input type="number" class="form-control" id="availableCopies" aria-describedby="addedCopies" [(ngModel)]="numberCopies" name="addedCopies" min="1">
+                <p class="mb-1">Imposta numero di copie da aggiungere al magazzino</p>
+                <input type="number" class="form-control" aria-describedby="addedCopies" [(ngModel)]="numberCopies" name="addedCopies" min="1">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="update(book.idBook)">Aggiorna Copie</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <div [id]="'modify' + i" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">MODIFICA DATI</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+
+              <div class="modal-body">
+
+                <p class="mb-3">Modifica i parametri di tuo interesse, poi invia i dati</p>
+
+                <div class="row row-cols-2">
+                  <div class="mb-3">
+                    <label [for]="'isbn' + i" class="form-label">Isbn</label>
+                    <input type="text" class="form-control" [id]="'isbn' + i" aria-describedby="isbn" [(ngModel)]="isbn" name="isbn">
+                  </div>
+                  <div class="mb-3">
+                    <label [for]="'title' + i" class="form-label">Titolo</label>
+                    <input type="text" class="form-control" [id]="'title' + i" aria-describedby="title" [(ngModel)]="title" name="title">
+                  </div>
+                </div>
+
+                <div class="row row-cols-2">
+                  <div class="mb-3">
+                    <label [for]="'coverLink' + i" class="form-label">Copertina Libro</label>
+                    <input type="text" class="form-control" [id]="'coverLink' + i" aria-describedby="coverLink" [(ngModel)]="coverLink" name="coverLink">
+                  </div>
+                  <div class="mb-3">
+                    <label [for]="'author' + i" class="form-label">Autore</label>
+                    <input type="text" class="form-control" [id]="'author' + i" aria-describedby="author" [(ngModel)]="author" name="author">
+                  </div>
+                </div>
+
+                <div class="row row-cols-2">
+                  <div class="mb-3">
+                    <label [for]="'publisher' + i" class="form-label">Casa Editrice</label>
+                    <input type="text" class="form-control" [id]="'publisher' + i" aria-describedby="publisher" [(ngModel)]="publisher" name="publisher">
+                  </div>
+                  <div class="mb-3">
+                    <label [for]="'pages' + i" class="form-label">Pagine Libro</label>
+                    <input type="number" class="form-control" [id]="'pages' + i" aria-describedby="pages" [(ngModel)]="pages" name="pages">
+                  </div>
+                </div>
+
+                <div class="row row-cols-2">
+                  <div class="mb-3">
+                    <label [for]="'price' + i" class="form-label">Prezzo</label>
+                    <input type="number" class="form-control" [id]="'price' + i" aria-describedby="price" [(ngModel)]="price" name="price">
+                  </div>
+                  <div class="mb-3">
+                    <label [for]="'availableCopies' + i" class="form-label">Copie Disponibili</label>
+                    <input type="number" class="form-control" [id]="'availableCopies' + i" aria-describedby="availableCopies" [(ngModel)]="availableCopies" name="availableCopies">
+                  </div>
+                </div>
+
+                <div class="row row-cols-2">
+                  <div class="mb-3">
+                    <label [for]="'publicationYear' + i" class="form-label" style="font-size: small;">Anno Pubblicazione</label>
+                    <input type="number" class="form-control" [id]="'publicationYear' + i" aria-describedby="publicationYear" [(ngModel)]="publicationYear" name="publicationYear">
+                  </div>
+                  <div class="mb-3">
+                    <label [for]="'genre' + i" class="form-label">Genere</label>
+                    <select [id]="'genre' + i" class="form-select text-center" aria-label="genre" [(ngModel)]="genre" name="genre">
+                      <option selected></option>
+                      <option value="ART">arte</option>
+                      <option value="ASTRONOMY">astronomia</option>
+                      <option value="ADVENTURE">avventura</option>
+                      <option value="CHILDREN">bambini</option>
+                      <option value="BIOGRAPHY">biografia</option>
+                      <option value="BUISNESS">business</option>
+                      <option value="CINEMA">cinema</option>
+                      <option value="CLASSIC">classici</option>
+                      <option value="COOK">cucina</option>
+                      <option value="ECONOMIC">economia</option>
+                      <option value="SCI_FI">fantascienza</option>
+                      <option value="FANTASY">fantasy</option>
+                      <option value="PHILOSOPHY">filosofia</option>
+                      <option value="EDUCATION">formazione</option>
+                      <option value="PHOTOGRAPHY">fotografia</option>
+                      <option value="COMIC">fumetti</option>
+                      <option value="GARDENING">giardinaggio</option>
+                      <option value="JOURNALISM">giornalismo</option>
+                      <option value="YOUNG_ADULT">giovani adulti</option>
+                      <option value="GRAPHIC_NOVEL">graphic novel</option>
+                      <option value="GUIDE">guide</option>
+                      <option value="MYSTERY">giallo</option>
+                      <option value="HORROR">horror</option>
+                      <option value="LINGUISTIC">linguistica</option>
+                      <option value="MATHEMATICS">matematica</option>
+                      <option value="MUSIC">musica</option>
+                      <option value="NOIR">noir</option>
+                      <option value="PARANORMAL">paranormale</option>
+                      <option value="POETRY">poesia</option>
+                      <option value="POLITICAL">politica</option>
+                      <option value="PSYCHOLOGY">psicologia</option>
+                      <option value="SHORT_STORIES">racconti brevi</option>
+                      <option value="RELIGION">religione</option>
+                      <option value="NOVEL">romanzo</option>
+                      <option value="ROMANCE">romanzo rosa</option>
+                      <option value="SCIENCE">scienza</option>
+                      <option value="SOCIAL_SCIENCE">scienze sociali</option>
+                      <option value="SPIRITUAL">spirituale</option>
+                      <option value="SPORT">sport</option>
+                      <option value="HISTORICAL">storico</option>
+                      <option value="TECHNOLOGY">tecnologia</option>
+                      <option value="THRILLER">thriller</option>
+                      <option value="TRUE_CRIME">true crime</option>
+                      <option value="TRAVEL">viaggi</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row row-cols-2">
+                  <div class="mb-3">
+                    <label [for]="'availableEbook' + i" class="form-label">Ebook disponibile?</label>
+                      <select [id]="'availableEbook' + i" [(ngModel)]="availableEbook" [ngModelOptions]="{standalone: true}" class="form-select text-center" aria-label="availableEbook">
+                        <option value="UNAVAILABLE">no</option>
+                        <option value="AVAILABLE">si</option>
+                      </select>
+                  </div>
+                </div>
+
+                <div class="row row-cols-2">
+                  <div class="mb-3">
+                    <label [for]="'ebookSize' + i" class="form-label">Dimensione ebook (mb)</label>
+                    <input type="number" class="form-control" [id]="'ebookSize' + i" aria-describedby="ebookSize" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookSize" name="number">
+                  </div>
+
+                  <div class="mb-3">
+                    <label [for]="'ebookPrice' + i" class="form-label">Prezzo ebook</label>
+                    <input type="number" class="form-control" [id]="'ebookPrice' + i" aria-describedby="ebookPrice" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookPrice" name="ebookPrice">
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="clearData()">Chiudi</button>
                 <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="update(book.idBook)">Aggiorna Copie</button>
               </div>
 
