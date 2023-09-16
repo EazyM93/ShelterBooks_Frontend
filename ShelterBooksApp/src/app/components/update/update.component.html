@@ -3,30 +3,31 @@
 <input type="text" class="form-control mb-3" id="isbn" aria-describedby="isbn" [(ngModel)]="isbnFilter" name="isbn" (ngModelChange)="onIsbnInputChange()" placeholder="cerca per isbn" autocomplete="off">
 
 <div id="tabBooks" class="p-3 rounded">
-  <div class="row row-cols-4 mb-2" style="text-transform: uppercase;">
-    <h4>titolo</h4>
-    <h4 class="text-center">isbn</h4>
-    <h4 class="text-center">copie magazzino</h4>
-    <div class="row row-cols-2">
-      <h5 class="text-center">agg. copie</h5>
-      <h5 class="text-center">modifica</h5>
-    </div>
-
+  <div class="row row-cols-6 mb-2" style="text-transform: uppercase;">
+    <h6>titolo</h6>
+    <h6 class="text-center">isbn</h6>
+    <h6 class="text-center">copie magazzino</h6>
+    <h6 class="text-center">agg. copie</h6>
+    <h6 class="text-center">modifica</h6>
+    <h6 class="text-center">cancella</h6>
   </div>
 
   <div *ngFor="let book of booksArray; let i = index">
-    <div class="row row-cols-4 align-items-center mb-3">
+    <div class="row row-cols-6 align-items-center mb-3 border-bottom">
       <p class="ps-3">{{book.title}}</p>
       <p class="text-center">{{book.isbn}}</p>
       <p class="text-center">{{book.availableCopies}}</p>
-      <div class="row row-cols-2">
-        <div class="text-center">
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" [attr.data-bs-target]="'#copies' + i"><i class="bi bi-journal-plus text-white"></i></button>
-        </div>
-        <div class="text-center">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#modify' + i" (click)="getBookInfo(book.idBook)"><i class="bi bi-info-square-fill text-white" ></i></button>
-        </div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" [attr.data-bs-target]="'#copies' + i"><i class="bi bi-journal-plus text-white"></i></button>
       </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#modify' + i" (click)="getBookInfo(book.idBook)"><i class="bi bi-info-square-fill text-white" ></i></button>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#copies' + i"><i class="bi bi-trash3-fill text-white"></i></button>
+      </div>
+
 
 
       <div [id]="'copies' + i" class="modal fade" tabindex="-1">
