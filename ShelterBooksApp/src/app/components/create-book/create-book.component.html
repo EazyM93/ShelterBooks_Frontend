@@ -34,7 +34,11 @@
 
     <div class="mb-5">
         <label for="price" class="form-label">prezzo</label>
-        <input type="number" class="form-control" id="price" aria-describedby="price" [(ngModel)]="price" name="price">
+        <div class="input-group">
+          <span class="input-group-text">€</span>
+          <input type="number" class="form-control" id="price" aria-describedby="price" [(ngModel)]="price" name="price">
+        </div>
+
     </div>
 
     <div class="mb-5">
@@ -115,13 +119,21 @@
   <div class="mb-5 d-flex">
 
     <div class="me-5">
-      <label for="ebookSize" class="form-label">dimensione ebook (mb)</label>
-      <input type="number" class="form-control" id="ebookSize" aria-describedby="ebookSize" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookSize" name="number">
+      <label for="ebookSize" class="form-label">dimensione ebook</label>
+      <div class="input-group">
+        <span class="input-group-text">MB</span>
+        <input type="number" class="form-control" id="ebookSize" aria-describedby="ebookSize" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookSize" name="number">
+      </div>
+
     </div>
 
     <div class="me-5">
       <label for="ebookPrice" class="form-label">prezzo ebook</label>
-      <input type="number" class="form-control" id="ebookPrice" aria-describedby="ebookPrice" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookPrice" name="ebookPrice">
+      <div class="input-group">
+        <span class="input-group-text">€</span>
+        <input type="number" class="form-control" id="ebookPrice" aria-describedby="ebookPrice" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookPrice" name="ebookPrice">
+      </div>
+
     </div>
 
   </div>

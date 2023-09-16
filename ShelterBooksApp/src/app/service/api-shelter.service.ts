@@ -38,6 +38,26 @@ export class ApiShelterService {
     return this._http.post<any>(`${this.BooksUrl}`, newBook);
   }
 
+  updateBook(
+    idBook: string,
+    isbn: string,
+	  title: string,
+    coverLink: string,
+    author: string,
+    publisher: string,
+	  pages: number,
+    price: number,
+    publicationYear: number,
+    genre: string,
+    availableCopies: number,
+	  availableEbook: string,
+	  ebookSize: number,
+    ebookPrice: number
+  ): Observable<any> {
+    const updateBook = { isbn , title, coverLink, author, publisher, pages, price, publicationYear, genre, availableCopies, availableEbook, ebookSize, ebookPrice };
+    return this._http.put<any>(`${this.BooksUrl}/${idBook}`, updateBook);
+  }
+
   updateCopies(
     idBook: string,
     numberCopies: number

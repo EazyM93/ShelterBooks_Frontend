@@ -45,7 +45,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="update(book.idBook)">Aggiorna Copie</button>
+                <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="updateCopies(book.idBook)">Aggiorna Copie</button>
               </div>
 
             </form>
@@ -103,7 +103,11 @@
                 <div class="row row-cols-2">
                   <div class="mb-3">
                     <label [for]="'price' + i" class="form-label">Prezzo</label>
-                    <input type="number" class="form-control" [id]="'price' + i" aria-describedby="price" [(ngModel)]="price" name="price">
+                    <div class="input-group">
+                      <span class="input-group-text">€</span>
+                      <input type="number" class="form-control" [id]="'price' + i" aria-describedby="price" [(ngModel)]="price" name="price">
+                    </div>
+
                   </div>
                   <div class="mb-3">
                     <label [for]="'availableCopies' + i" class="form-label">Copie Disponibili</label>
@@ -180,20 +184,28 @@
 
                 <div class="row row-cols-2">
                   <div class="mb-3">
-                    <label [for]="'ebookSize' + i" class="form-label">Dimensione ebook (mb)</label>
-                    <input type="number" class="form-control" [id]="'ebookSize' + i" aria-describedby="ebookSize" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookSize" name="number">
+                    <label [for]="'ebookSize' + i" class="form-label">Dimensione ebook</label>
+                    <div class="input-group">
+                      <span class="input-group-text">MB</span>
+                      <input type="number" class="form-control" [id]="'ebookSize' + i" aria-describedby="ebookSize" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookSize" name="number">
+                    </div>
+
                   </div>
 
                   <div class="mb-3">
                     <label [for]="'ebookPrice' + i" class="form-label">Prezzo ebook</label>
-                    <input type="number" class="form-control" [id]="'ebookPrice' + i" aria-describedby="ebookPrice" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookPrice" name="ebookPrice">
+                    <div class="input-group">
+                      <span class="input-group-text">€</span>
+                      <input type="number" class="form-control" [id]="'ebookPrice' + i" aria-describedby="ebookPrice" [disabled]="availableEbook === 'UNAVAILABLE'" [(ngModel)]="ebookPrice" name="ebookPrice">
+                    </div>
+
                   </div>
                 </div>
 
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="clearData()">Chiudi</button>
-                <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="update(book.idBook)">Aggiorna Copie</button>
+                <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="updateData(book.idBook)">Aggiorna Copie</button>
               </div>
 
             </form>

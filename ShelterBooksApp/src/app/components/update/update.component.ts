@@ -87,14 +87,37 @@ export class UpdateComponent implements OnInit {
     );
   }
 
-  update(idBookCopies: string): void {
+  updateCopies(idBookCopies: string): void {
     this.shelterService
       .updateCopies(idBookCopies, this.numberCopies)
       .subscribe(() => {
         this.getBookListByTitle();
       });
+  }
 
-
+  updateData(idBook: string): void{
+    if(this.availableEbook === 'UNAVAILABLE'){
+      this.ebookPrice = 0;
+      this.ebookSize = 0;
+    }
+    this.shelterService.updateBook(
+      idBook,
+      this.isbn,
+      this.title,
+      this.coverLink,
+      this.author,
+      this.publisher,
+      this.pages,
+      this.price,
+      this.publicationYear,
+      this.genre,
+      this.availableCopies,
+      this.availableEbook,
+      this.ebookSize,
+      this.ebookPrice
+    ).subscribe((response: any) => {
+      this.clearData();
+    });
   }
 
 }
