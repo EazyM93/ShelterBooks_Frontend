@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ApiShelterService } from 'src/app/service/api-shelter.service';
 
 @Component({
-  selector: 'app-update-copies',
-  templateUrl: './update-copies.component.html',
-  styleUrls: ['./update-copies.component.scss']
+  selector: 'app-update',
+  templateUrl: './update.component.html',
+  styleUrls: ['./update.component.scss']
 })
-export class UpdateCopiesComponent implements OnInit {
+export class UpdateComponent implements OnInit {
 
   booksArray: any[] = [];
 
