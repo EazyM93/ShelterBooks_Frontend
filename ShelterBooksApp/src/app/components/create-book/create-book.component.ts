@@ -42,6 +42,24 @@ export class CreateBookComponent implements OnInit {
       this.availableEbook,
       this.ebookSize,
       this.ebookPrice
-    ).subscribe();
+    ).subscribe(() => {
+      this.clearForm();
+    });
+  }
+
+  clearForm(): void {
+    this.isbn = '';
+    this.title = '';
+    this.coverLink = '';
+    this.author = '';
+    this.publisher = '';
+    this.pages = 0;
+    this.price = 0;
+    this.publicationYear = 0;
+    this.genre = '';
+    this.availableCopies = 0;
+    this.availableEbook = 'UNAVAILABLE';
+    this.ebookSize = 0;
+    this.ebookPrice = 0;
   }
 }

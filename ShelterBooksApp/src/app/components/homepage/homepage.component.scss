@@ -1,0 +1,37 @@
+#news{
+  background: linear-gradient(to bottom, transparent 50%, #DCAE30 50%) ;
+}
+
+#newsTitle{
+  color: white;
+  background-color: #DCAE30;
+  width: fit-content;
+}
+
+#bestseller{
+  background: linear-gradient(to bottom, transparent 50%, #D09525 50%);
+}
+
+#bestsellerTitle{
+  color: white;
+  background-color: #DCAE30;
+  width: fit-content;
+}
+
+h1{
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+}
+
+.book-cover {
+  transition: transform 0.8s;
+  width: 160px;
+  height: 250px;
+  object-fit: cover;
+  &:hover{
+    transform: scale(1.5);
+    transition: transform 0.8s;
+  }
+
+}

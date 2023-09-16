@@ -115,9 +115,14 @@ export class UpdateComponent implements OnInit {
       this.availableEbook,
       this.ebookSize,
       this.ebookPrice
-    ).subscribe((response: any) => {
+    ).subscribe(() => {
       this.clearData();
     });
+  }
+
+  deleteBook(idBook: string): void{
+    this.shelterService.deleteBook(idBook)
+      .subscribe();
   }
 
 }

@@ -15,8 +15,14 @@ export class ApiShelterService {
     return this._http.get<any>(`${this.BooksUrl}/idBook/${idBook}`);
   }
 
-  getBooks(): Observable<any[]> {
-    return this._http.get<any>(`${this.BooksUrl}`);
+  getBooks(
+    pageNumber: number,
+    sort: string
+  ): Observable<any[]> {
+    const params = new HttpParams()
+      .set('pageNumber', pageNumber)
+      .set('sort', sort);
+    return this._http.get<any>(`${this.BooksUrl}`, {params});
   }
 
   saveBook(
@@ -88,5 +94,9 @@ export class ApiShelterService {
       .set('pageNumber', pageNumber)
       .set('sort', sort);
     return this._http.get<any>(`${this.BooksUrl}/filter`, {params});
+  }
+
+  deleteBook(idBook: string): Observable<any>{
+    return this._http.delete<any>(`${this.BooksUrl}/${idBook}`);
   }
 }

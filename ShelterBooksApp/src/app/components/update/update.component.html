@@ -25,7 +25,7 @@
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#modify' + i" (click)="getBookInfo(book.idBook)"><i class="bi bi-info-square-fill text-white" ></i></button>
       </div>
       <div class="text-center">
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#copies' + i"><i class="bi bi-trash3-fill text-white"></i></button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#cancel' + i"><i class="bi bi-trash3-fill text-white"></i></button>
       </div>
 
 
@@ -214,8 +214,32 @@
         </div>
       </div>
 
+      <div [id]="'cancel' + i" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">{{book.title}}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+
+              <div class="modal-body">
+                <p class="mb-1">Sicuro di voler eliminare questo libro?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteBook(book.idBook)">Conferma Cancellazione</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
+
 
 

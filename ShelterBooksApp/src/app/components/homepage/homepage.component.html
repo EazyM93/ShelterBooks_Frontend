@@ -1,20 +1,25 @@
-<div class="row row-cols-4">
+<div class="p-4">
+  <div class="mb-5">
+    <h1 id="newsTitle" class="mb-5 rounded py-2 px-4">nuove uscite</h1>
+    <div id="news" class="row row-cols-5 pb-5 rounded text-center mx-1">
 
-  <div *ngFor="let book of booksArray">
-
-    <div class="col mb-3">
-
-      <div class="card h-100">
-        <img [src]="book.coverLink" class="card-img-top" alt="card_image" />
-        <div class="card-body">
-          <h5 class="card-title">{{book.title}}</h5>
-        </div>
+      <div *ngFor="let book of news">
+        <img [src]="book.coverLink" class="card-img-top book-cover rounded" alt="book_image" />
       </div>
 
     </div>
-
   </div>
+  <div>
+    <h1 id="bestsellerTitle" class="mb-5 rounded py-2 px-4">bestseller su shelterbooks</h1>
+    <div id="bestseller" class="row row-cols-5 pb-5 rounded text-center m-1">
 
+      <div *ngFor="let book of bestseller">
+        <img [src]="book.coverLink" class="card-img-top book-cover rounded" alt="book_image" />
+      </div>
+
+    </div>
+  </div>
 </div>
+
 
 
