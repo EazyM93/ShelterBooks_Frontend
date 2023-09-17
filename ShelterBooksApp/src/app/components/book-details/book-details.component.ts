@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiShelterService } from 'src/app/service/api-shelter.service';
+import { UserServiceService } from 'src/app/service/user-service.service';
 
 @Component({
   selector: 'app-book-details',
@@ -25,7 +26,7 @@ export class BookDetailsComponent implements OnInit {
 	ebookSize: number = 0;
   ebookPrice: number = 0;
 
-  constructor(private route: ActivatedRoute, private shelterService: ApiShelterService) { }
+  constructor(private route: ActivatedRoute, private shelterService: ApiShelterService, private userService: UserServiceService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(idRecived => {
@@ -48,6 +49,10 @@ export class BookDetailsComponent implements OnInit {
           this.ebookPrice = response.ebookPrice;
         });
     });
+  }
+
+  addBookToWishList(): void{
+    this.userService.addBookToWishlist(this.idBook).subscribe();
   }
 
 }

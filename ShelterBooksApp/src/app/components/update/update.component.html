@@ -67,6 +67,11 @@
 
                 <p class="mb-3">Modifica i parametri di tuo interesse, poi invia i dati</p>
 
+                <div class="mb-3">
+                  <label [for]="'description' + i" class="form-label">Descrizione</label>
+                  <input type="text" class="form-control" [id]="'description' + i" aria-describedby="description" [(ngModel)]="description" name="description">
+                </div>
+
                 <div class="row row-cols-2">
                   <div class="mb-3">
                     <label [for]="'isbn' + i" class="form-label">Isbn</label>
