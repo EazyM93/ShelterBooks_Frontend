@@ -13,6 +13,7 @@ import { TokenInterceptor } from './auth/token.interceptor';
 import { BookManagerComponent } from './components/book-manager/book-manager.component';
 import { CreateBookComponent } from './components/create-book/create-book.component';
 import { UpdateComponent } from './components/update/update.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Route[] = [
   { path: 'bookManager', component: BookManagerComponent, children: [
     { path: 'createBook', component: CreateBookComponent },
     { path: 'update', component: UpdateComponent }
-  ]}
+  ]},
+  { path: 'bookDetails/:id', component: BookDetailsComponent }
 ];
 
 @NgModule({
@@ -34,7 +36,8 @@ const routes: Route[] = [
     HomepageComponent,
     BookManagerComponent,
     CreateBookComponent,
-    UpdateComponent
+    UpdateComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,

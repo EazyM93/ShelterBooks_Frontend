@@ -41,8 +41,11 @@ export class HomepageComponent implements OnInit {
 
   getBooksOrderByAllSelledCopies(): void{
     this._apiservice.getBooks(0, 'allSelledCopies')
-      .subscribe((response: any)=>{
-        for(let i = 0; i < 5; i++) this.bestseller.push(response.content[i]);
+        .subscribe((response: any)=>{
+        const books = response.content;
+        for(let i = books.length - 1; i >= books.length - 5; i--){
+          this.bestseller.push(response.content[i]);
+        }
           console.log(this.bestseller);
       })
   }

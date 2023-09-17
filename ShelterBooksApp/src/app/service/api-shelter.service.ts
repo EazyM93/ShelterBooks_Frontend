@@ -28,6 +28,7 @@ export class ApiShelterService {
   saveBook(
     isbn: string,
 	  title: string,
+    description: string,
     coverLink: string,
     author: string,
     publisher: string,
@@ -40,7 +41,7 @@ export class ApiShelterService {
 	  ebookSize: number,
     ebookPrice: number
   ): Observable<any> {
-    const newBook = { isbn , title, coverLink, author, publisher, pages, price, publicationYear, genre, availableCopies, availableEbook, ebookSize, ebookPrice };
+    const newBook = { isbn , title, description, coverLink, author, publisher, pages, price, publicationYear, genre, availableCopies, availableEbook, ebookSize, ebookPrice };
     return this._http.post<any>(`${this.BooksUrl}`, newBook);
   }
 
@@ -48,6 +49,7 @@ export class ApiShelterService {
     idBook: string,
     isbn: string,
 	  title: string,
+    description: string,
     coverLink: string,
     author: string,
     publisher: string,
@@ -60,7 +62,7 @@ export class ApiShelterService {
 	  ebookSize: number,
     ebookPrice: number
   ): Observable<any> {
-    const updateBook = { isbn , title, coverLink, author, publisher, pages, price, publicationYear, genre, availableCopies, availableEbook, ebookSize, ebookPrice };
+    const updateBook = { isbn , title, description, coverLink, author, publisher, pages, price, publicationYear, genre, availableCopies, availableEbook, ebookSize, ebookPrice };
     return this._http.put<any>(`${this.BooksUrl}/${idBook}`, updateBook);
   }
 

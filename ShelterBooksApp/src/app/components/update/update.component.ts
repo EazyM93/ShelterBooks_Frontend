@@ -18,6 +18,7 @@ export class UpdateComponent implements OnInit {
   //info single book
   isbn:string = '';
   title:string = '';
+  description:string = '';
   coverLink: string = '';
   author: string = '';
   publisher: string = '';
@@ -50,6 +51,7 @@ export class UpdateComponent implements OnInit {
       .subscribe((response: any) => {
         this.isbn = response.isbn;
         this.title = response.title;
+        this.description = response.description;
         this.coverLink = response.coverLink;
         this.author = response.author;
         this.publisher = response.publisher;
@@ -104,6 +106,7 @@ export class UpdateComponent implements OnInit {
       idBook,
       this.isbn,
       this.title,
+      this.description,
       this.coverLink,
       this.author,
       this.publisher,

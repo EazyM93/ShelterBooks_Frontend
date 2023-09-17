@@ -10,6 +10,7 @@ export class CreateBookComponent implements OnInit {
 
   isbn: string = '';
 	title: string = '';
+  description: string = '';
   coverLink: string = '';
   author: string = '';
   publisher: string = '';
@@ -31,6 +32,7 @@ export class CreateBookComponent implements OnInit {
     this.shelterService.saveBook(
       this.isbn,
       this.title,
+      this.description,
       this.coverLink,
       this.author,
       this.publisher,
@@ -50,6 +52,7 @@ export class CreateBookComponent implements OnInit {
   clearForm(): void {
     this.isbn = '';
     this.title = '';
+    this.description = '';
     this.coverLink = '';
     this.author = '';
     this.publisher = '';

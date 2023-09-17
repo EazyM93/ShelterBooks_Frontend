@@ -6,8 +6,8 @@
 
       <div *ngIf="currentUserStatus && userLogged">
         <div class="dropdown me-4">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">gestionale</button>
-            <ul class="dropdown-menu px-2">
+          <button class="btn dropdown-toggle rounded rounded-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">gestionale</button>
+            <ul class="dropdown-menu px-2 rounded rounded-4">
               <li><a class="dropdown-item rounded" [routerLink]="['bookManager']"><i class="bi bi-book me-3"></i>libri</a></li>
               <li><a class="dropdown-item rounded" href="#"><i class="bi bi-person-lines-fill me-3"></i>utenti</a></li>
               <li><a class="dropdown-item rounded" href="#"><i class="bi bi-box-seam me-3"></i>ordini</a></li>
@@ -17,7 +17,7 @@
 
 
       <div *ngIf="userLogged; else noLoggedUser">
-        <button id="logout" type="button" class="btn btn-danger text-white" (click)="logout()">logout</button>
+        <button id="logout" type="button" class="btn btn-danger text-white  rounded rounded-4" (click)="logout()">logout</button>
       </div>
 
       <ng-template #noLoggedUser>
