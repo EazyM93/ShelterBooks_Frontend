@@ -14,7 +14,9 @@
     <div *ngIf="!currentUserStatus && userLogged" class="d-flex flex-column align-items-center border-bottom mb-3">
       <h5 class="mb-4">{{currentUserName}} {{currentUserSurname}}</h5>
       <div class="d-flex flex-column">
-        <a class="nav-link rw rounded-4 mb-1 px-3 d-flex align-items-center" [routerLink]="['currentUserPage']"><i class="bi bi-person-fill-gear me-3 fs-4"></i>profilo</a>
+        <a class="nav-link rw rounded-4 mb-3 px-3 d-flex align-items-center" [routerLink]="['currentUserPage']"><i class="bi bi-person-fill-gear me-3 fs-4"></i>profilo</a>
+        <a class="nav-link rw rounded-4 mb-3 px-3 d-flex align-items-center" [routerLink]="['currentUserPage']"><i class="bi bi-bag-heart-fill me-3 fs-4"></i>wishlist</a>
+
       </div>
     </div>
 

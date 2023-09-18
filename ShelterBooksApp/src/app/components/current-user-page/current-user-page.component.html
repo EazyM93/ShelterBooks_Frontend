@@ -77,7 +77,8 @@
   </div>
 
   <div class="d-flex align-items-center">
-    <button type="btn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#submitUser">Conferma Modifiche</button>
+    <button type="btn" class="btn btn-success me-3" data-bs-toggle="modal" data-bs-target="#submitUser">Conferma Modifiche</button>
+    <button type="btn" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelUser">Cancella Profilo</button>
   </div>
 
   <div id="submitUser" class="modal fade" tabindex="-1">
@@ -94,7 +95,30 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-            <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="sentUpdate()">Aggiorna Info</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="sentUpdate()">Aggiorna Info</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="cancelUser" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">CANCELLAZIONE PROFILO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+
+          <div class="modal-body">
+            <p class="mb-1">Sicuro di voler eliminare il tuo profilo?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteThisUser()">Conferma Cancellazione</button>
           </div>
 
         </form>

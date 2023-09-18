@@ -58,4 +58,11 @@ export class CurrentUserPageComponent implements OnInit {
     ).subscribe();
   }
 
+  deleteThisUser(){
+    this.userService.deleteCurrentUser().subscribe(() => {
+      this.router.navigate(['/homepage']);
+      this.authService.logout().subscribe();
+    });
+  }
+
 }
