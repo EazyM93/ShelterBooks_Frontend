@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  image: string = '';
   name: string = '';
   surname: string = '';
   email: string = '';
@@ -27,6 +28,7 @@ export class RegisterComponent implements OnInit {
 
   register(): void {
     this.authService.register(
+      this.image,
       this.name,
       this.surname,
       this.email,

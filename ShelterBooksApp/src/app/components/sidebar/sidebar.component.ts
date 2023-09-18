@@ -40,7 +40,6 @@ export class SidebarComponent implements OnInit {
     // check if user is admin
     if(this.userLogged !== false){
       this.authService.getCurrentUserInfo().subscribe(userInfo => {
-        console.log(userInfo.name);
         this.currentUserStatus = userInfo.role === 'ADMIN';
         this.currentUserName = userInfo.name;
         this.currentUserSurname = userInfo.surname;

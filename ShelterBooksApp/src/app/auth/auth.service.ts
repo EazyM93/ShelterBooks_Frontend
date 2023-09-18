@@ -25,6 +25,7 @@ export class AuthService {
   }
 
   register(
+      image: string,
       name: string,
       surname: string,
       email: string,
@@ -35,7 +36,7 @@ export class AuthService {
       district: string,
       country: string
     ): Observable<any> {
-      const newUser = { name, surname, email, password, addressName, postalCode, city, district, country };
+      const newUser = { image, name, surname, email, password, addressName, postalCode, city, district, country };
     return this.http.post<any>('http://localhost:3001/auth/register', newUser);
   }
 

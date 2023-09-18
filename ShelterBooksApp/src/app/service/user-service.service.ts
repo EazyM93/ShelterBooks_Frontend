@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -11,12 +11,16 @@ export class UserServiceService {
 
   constructor(private _http:HttpClient) { }
 
+  getUsers(): Observable<any[]> {
+    return this._http.get<any>(`${this.userUrl}`);
+  }
+
   addBookToWishlist(idBook: string): Observable<any>{
     return this._http.post<any>(`${this.userUrl}/addWishlist/${idBook}`, null);
   }
 
-  updateUser(
-    idUser: string,
+  updateCurrentUser(
+    image: string,
     name: string,
     surname: string,
     email: string,
@@ -27,8 +31,8 @@ export class UserServiceService {
     district: string,
     country: string
   ): Observable<any>{
-    const updateUser = {idUser, name, surname, email, password, addressName, postalCode, city, district, country};
-    return this._http.put<any>(`${this.userUrl}/${idUser}`, updateUser);
+    const updateUser = {image, name, surname, email, password, addressName, postalCode, city, district, country};
+    return this._http.put<any>(`${this.userUrl}/updateCurrent`, updateUser);
   }
 
 }

@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="role === 'ADMIN'">
   <div class="w-25 p-3">
     <label for="adminMail" class="form-label">admin email</label>
     <input type="text" class="form-control mb-3" id="adminMail" aria-describedby="adminMail" [(ngModel)]="email" name="adminMail">
@@ -20,7 +20,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-            <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="sentUpdate()">Aggiorna Copie</button>
+            <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="sentUpdate()">Aggiorna Admin</button>
           </div>
 
         </form>
@@ -30,4 +30,77 @@
   </div>
 </div>
 
+<div *ngIf="role === 'USER'">
+  <div class="row row-cols-3">
+    <div>
+      <label for="email" class="form-label">email</label>
+      <input type="text" class="form-control mb-3" id="email" aria-describedby="email" [(ngModel)]="email" name="email">
+    </div>
+    <div>
+      <label for="name" class="form-label">nome</label>
+      <input type="text" class="form-control mb-3" id="name" aria-describedby="name" [(ngModel)]="name" name="name">
+    </div>
+    <div>
+      <label for="surname" class="form-label">cognome</label>
+      <input type="text" class="form-control mb-3" id="surname" aria-describedby="surname" [(ngModel)]="surname" name="surname">
+    </div>
+    <div>
+      <label for="image" class="form-label">immagine profilo</label>
+      <input type="text" class="form-control mb-3" id="image" aria-describedby="image" [(ngModel)]="image" name="image">
+    </div>
+    <div>
+      <label for="password" class="form-label">password</label>
+      <input type="text" class="form-control mb-3" id="password" aria-describedby="password" [(ngModel)]="password" name="password">
+    </div>
+    <div>
+      <label for="addressName" class="form-label">Indirizzo</label>
+      <input type="text" class="form-control mb-3" id="addressName" aria-describedby="addressName" [(ngModel)]="addressName" name="addressName">
+    </div>
+    <div>
+      <label for="postalCode" class="form-label">Codice Postale</label>
+      <input type="text" class="form-control mb-3" id="postalCode" aria-describedby="postalCode" [(ngModel)]="postalCode" name="postalCode">
+    </div>
+    <div>
+      <label for="city" class="form-label">Città</label>
+      <input type="text" class="form-control mb-3" id="city" aria-describedby="city" [(ngModel)]="city" name="city">
+    </div>
+    <div>
+      <label for="district" class="form-label">Regione</label>
+      <input type="text" class="form-control mb-3" id="district" aria-describedby="district" [(ngModel)]="district" name="district">
+    </div>
+    <div>
+      <label for="country" class="form-label">Nazione</label>
+      <input type="text" class="form-control mb-3" id="country" aria-describedby="country" [(ngModel)]="country" name="country">
+    </div>
+
+
+  </div>
+
+  <div class="d-flex align-items-center">
+    <button type="btn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#submitUser">Conferma Modifiche</button>
+  </div>
+
+  <div id="submitUser" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">MODIFICHE USER</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+
+          <div class="modal-body">
+            <p class="mb-1">Sicuro di voler inviare queste modifiche?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="sentUpdate()">Aggiorna Info</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
 

@@ -1,0 +1,23 @@
+<div class="row row-cols-3">
+  <div *ngFor="let user of usersList" >
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+
+        <div class="col-md-4 d-flex">
+          <img [src]="user.image" class="img-fluid rounded-circle ms-1" alt="user_image">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{user.name + ' ' + user.surname}}</h5>
+            <p class="card-text"><span class="fw-bold">Email:</span> {{user.email}}</p>
+            <p class="card-text"><span class="fw-bold">Indirizzo:</span> {{user.address.addressName}}</p>
+
+          </div>
+        </div>
+        <button id="delete" type="button" class="btn"><i class="bi bi-x-square-fill fs-4"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

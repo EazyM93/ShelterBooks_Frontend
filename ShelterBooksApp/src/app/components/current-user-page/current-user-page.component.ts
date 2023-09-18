@@ -11,6 +11,7 @@ import { UserServiceService } from 'src/app/service/user-service.service';
 export class CurrentUserPageComponent implements OnInit {
 
   idUser: string = '';
+  image: string = '';
   name: string = '';
   surname: string = '';
   email: string = '';
@@ -21,28 +22,30 @@ export class CurrentUserPageComponent implements OnInit {
   district: string = '';
   country: string = '';
 
-
+  role:string = '';
 
   constructor(private authService: AuthService, private router: Router, private userService: UserServiceService) { }
 
   ngOnInit(): void {
     this.authService.getCurrentUserInfo().subscribe(userInfo => {
       this.idUser = userInfo.idUser;
+      this.image = userInfo.image;
       this.name = userInfo.name;
       this.surname = userInfo.surname;
       this.email = userInfo.email;
       this.password = userInfo.password;
-      this.addressName = userInfo.addressName;
-      this.postalCode = userInfo.postalCode;
-      this.city = userInfo.city;
-      this.district = userInfo.district;
-      this.country = userInfo.country;
+      this.addressName = userInfo.address.addressName;
+      this.postalCode = userInfo.address.postalCode;
+      this.city = userInfo.address.city;
+      this.district = userInfo.address.district;
+      this.country = userInfo.address.country;
+      this.role = userInfo.role;
     });
   }
 
   sentUpdate(){
-    this.userService.updateUser(
-      this.idUser,
+    this.userService.updateCurrentUser(
+      this.image,
       this.name,
       this.surname,
       this.email,

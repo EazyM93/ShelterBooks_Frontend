@@ -16,6 +16,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CurrentUserPageComponent } from './components/current-user-page/current-user-page.component';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Route[] = [
     { path: 'createBook', component: CreateBookComponent },
     { path: 'update', component: UpdateComponent }
   ]},
+  { path: 'userList', component: UserListComponent },
   { path: 'bookDetails/:id', component: BookDetailsComponent }
 ];
 
@@ -42,7 +44,8 @@ const routes: Route[] = [
     UpdateComponent,
     BookDetailsComponent,
     SidebarComponent,
-    CurrentUserPageComponent
+    CurrentUserPageComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
