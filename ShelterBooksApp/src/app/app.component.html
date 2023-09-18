@@ -1,7 +1,13 @@
 <div id="main_container" class="p-3">
   <app-navbar></app-navbar>
-  <div>
-    <router-outlet></router-outlet>
+  <div class="row">
+    <div class="col-2">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+
 </div>
 

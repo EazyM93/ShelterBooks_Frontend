@@ -14,6 +14,7 @@ import { BookManagerComponent } from './components/book-manager/book-manager.com
 import { CreateBookComponent } from './components/create-book/create-book.component';
 import { UpdateComponent } from './components/update/update.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
@@ -37,7 +38,8 @@ const routes: Route[] = [
     BookManagerComponent,
     CreateBookComponent,
     UpdateComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

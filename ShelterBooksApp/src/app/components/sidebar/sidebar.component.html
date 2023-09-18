@@ -1,0 +1,33 @@
+<div id="main-container" class="rounded-4">
+  <div class="d-flex align-items-center">
+
+    <div *ngIf="currentUserStatus && userLogged">
+      <div class="dropdown me-4">
+        <button class="btn dropdown-toggle rounded rounded-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">gestionale</button>
+          <ul class="dropdown-menu px-2 rounded rounded-4">
+            <li><a class="dropdown-item rounded" [routerLink]="['bookManager']"><i class="bi bi-book me-3"></i>libri</a></li>
+            <li><a class="dropdown-item rounded" href="#"><i class="bi bi-person-lines-fill me-3"></i>utenti</a></li>
+            <li><a class="dropdown-item rounded" href="#"><i class="bi bi-box-seam me-3"></i>ordini</a></li>
+          </ul>
+      </div>
+    </div>
+
+
+    <div *ngIf="userLogged; else noLoggedUser">
+      <div class="dropdown me-5">
+        <button class="btn dropdown-toggle rounded rounded-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">utente</button>
+          <ul class="dropdown-menu rounded rounded-4">
+            <li><a class="dropdown-item rounded" [routerLink]="['bookManager']"><i class="bi bi-book me-3"></i>libri</a></li>
+            <li><a class="dropdown-item rounded" href="#"><i class="bi bi-person-lines-fill me-3"></i>utenti</a></li>
+            <li><a class="dropdown-item rounded" href="#"><i class="bi bi-box-seam me-3"></i>ordini</a></li>
+            <li><a class="dropdown-item rounded" [routerLink]="['homepage']"(click)="logout()"><i class="bi bi-box-arrow-left me-3"></i>logout</a></li>
+          </ul>
+      </div>
+    </div>
+
+    <ng-template #noLoggedUser>
+      <a class="nav-link" [routerLink]="['login']"><button type="button" class="btn BFD0D1 me-4">login</button></a>
+    </ng-template>
+
+  </div>
+</div>
