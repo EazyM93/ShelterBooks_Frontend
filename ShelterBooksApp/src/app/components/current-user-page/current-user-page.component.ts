@@ -34,11 +34,11 @@ export class CurrentUserPageComponent implements OnInit {
       this.surname = userInfo.surname;
       this.email = userInfo.email;
       this.password = userInfo.password;
-      this.addressName = userInfo.address.addressName;
-      this.postalCode = userInfo.address.postalCode;
-      this.city = userInfo.address.city;
-      this.district = userInfo.address.district;
-      this.country = userInfo.address.country;
+      this.addressName = userInfo?.address?.addressName ?? null;
+      this.postalCode = userInfo?.address?.postalCode ?? null;
+      this.city = userInfo?.address?.city ?? null;
+      this.district = userInfo?.address?.district ?? null;
+      this.country = userInfo?.address?.country ?? null;
       this.role = userInfo.role;
     });
   }
