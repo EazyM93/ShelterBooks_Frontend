@@ -15,12 +15,14 @@ import { CreateBookComponent } from './components/create-book/create-book.compon
 import { UpdateComponent } from './components/update/update.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CurrentUserPageComponent } from './components/current-user-page/current-user-page.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
   { path: 'homepage', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'currentUserPage', component: CurrentUserPageComponent},
   { path: 'bookManager', component: BookManagerComponent, children: [
     { path: 'createBook', component: CreateBookComponent },
     { path: 'update', component: UpdateComponent }
@@ -39,7 +41,8 @@ const routes: Route[] = [
     CreateBookComponent,
     UpdateComponent,
     BookDetailsComponent,
-    SidebarComponent
+    SidebarComponent,
+    CurrentUserPageComponent
   ],
   imports: [
     BrowserModule,

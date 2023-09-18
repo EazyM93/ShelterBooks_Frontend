@@ -12,6 +12,8 @@ export class SidebarComponent implements OnInit {
 
   userLogged: boolean = false;
   currentUserStatus: boolean = false;
+  currentUserName: string = '';
+  currentUserSurname: string = '';
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -40,6 +42,8 @@ export class SidebarComponent implements OnInit {
       this.authService.getCurrentUserInfo().subscribe(userInfo => {
         console.log(userInfo.name);
         this.currentUserStatus = userInfo.role === 'ADMIN';
+        this.currentUserName = userInfo.name;
+        this.currentUserSurname = userInfo.surname;
       });
     }
 

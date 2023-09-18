@@ -3,7 +3,7 @@ nav, .navbar-brand{
   color: white !important;
 }
 
-.btn, nav, .navbar-brand, a{
+nav, .navbar-brand, a{
   text-transform: uppercase;
   font-size: medium;
 }
@@ -17,30 +17,6 @@ nav, .navbar-brand{
   font-weight: lighter;
 }
 
-.dropdown-item{
-  color: #006165!important;
-  font-weight: bold;
-  &:hover{
-    background-color: #BFD0D1;
-    filter: brightness(80%);
-  }
-}
 
-.dropdown-toggle{
-  background-color: white;
-  color: #006165;
-  font-weight: bold;
-}
 
-.BFD0D1{
-  background-color: #BFD0D1;
-  color: #006165;
-  font-weight: bold;
-  &:hover{
-    filter: brightness(85%);
-  }
-}
 
-#logout{
-  font-weight: bold;
-}

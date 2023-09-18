@@ -2,3 +2,40 @@
   background-color: #006165;
   color: white !important;
 }
+
+// .BFD0D1{
+//   background-color: #BFD0D1;
+//   color: #006165;
+//   font-weight: bold;
+//   &:hover{
+//     filter: brightness(85%);
+//   }
+// }
+
+h4, h5{
+  text-transform: uppercase;
+}
+
+.rw{
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  &:hover{
+    background-color: #83a0a2;
+    filter: brightness(90%);
+  }
+}
+
+#logout{
+  color: rgb(242, 135, 135);
+  font-weight: bold;
+  text-transform: uppercase;
+  &:hover{
+    background-color: #BFD0D1;
+    filter: brightness(80%);
+  }
+}
+
+// #login{
+//   margin: 0;
+// }
