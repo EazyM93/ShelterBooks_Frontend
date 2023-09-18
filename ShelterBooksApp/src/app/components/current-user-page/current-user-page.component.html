@@ -1,1 +1,33 @@
-<p>current-user-page works!</p>
+<div>
+  <div class="w-25 p-3">
+    <label for="adminMail" class="form-label">admin email</label>
+    <input type="text" class="form-control mb-3" id="adminMail" aria-describedby="adminMail" [(ngModel)]="email" name="adminMail">
+    <label for="adminPassword" class="form-label">admin password</label>
+    <input type="text" class="form-control mb-3" id="adminPassword" aria-describedby="adminPassword" [(ngModel)]="password" name="adminPassword">
+    <button type="btn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#submitAdmin">Conferma Modifiche</button>
+  </div>
+  <div id="submitAdmin" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">MODIFICHE ADMIN</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+
+          <div class="modal-body">
+            <p class="mb-1">Sicuro di voler inviare queste modifiche?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+            <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="sentUpdate()">Aggiorna Copie</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

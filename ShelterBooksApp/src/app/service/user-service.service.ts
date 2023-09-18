@@ -15,4 +15,20 @@ export class UserServiceService {
     return this._http.post<any>(`${this.userUrl}/addWishlist/${idBook}`, null);
   }
 
+  updateUser(
+    idUser: string,
+    name: string,
+    surname: string,
+    email: string,
+    password: string,
+    addressName: string,
+    postalCode: string,
+    city: string,
+    district: string,
+    country: string
+  ): Observable<any>{
+    const updateUser = {idUser, name, surname, email, password, addressName, postalCode, city, district, country};
+    return this._http.put<any>(`${this.userUrl}/${idUser}`, updateUser);
+  }
+
 }
