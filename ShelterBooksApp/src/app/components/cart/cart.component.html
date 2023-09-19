@@ -8,14 +8,21 @@
 
     <ng-template #isNotEmpty>
       <div *ngFor="let book of booksArray; let i = index">
-        <div class="d-flex">
-        <div>
-          <img [src]="book.coverLink" style="width: 50px;" alt="">
-        </div>
-        <div>
 
+        <div class="row mb-3 cartProduct rounded-4">
+          <div class="col-1 p-0 me-3">
+            <img [src]="book.coverLink" style="width: 100px; height: 150px;" alt="" class="rounded-start-4">
+          </div>
+          <div class="col py-2">
+            <h4>{{book.title}}</h4>
+            <p><span class="fw-bold text-capitalize">prezzo:</span> {{book.price}} €</p>
+            <p class="fs-5"><span class="fw-bold text-capitalize">subtotale:</span> {{book.price*book.quantity}} €</p>
+          </div>
+          <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+            <h5 class="text-uppercase mb-3">quantità</h5>
+            <h3>{{book.quantity}}</h3>
+          </div>
         </div>
-      </div>
       </div>
 
     </ng-template>
@@ -23,8 +30,8 @@
 
   <div id="summary" class="col-2 mx-4 text-center rounded-4">
     <h3 class="p-2 rounded-top-4">riepilogo</h3>
-    <p><span class="text-uppercase fw-bold">totale:</span>€</p>
-    <button type="button" class="btn btn-success text-uppercase fw-bold mb-4">acquista ora</button>
+    <p class="fs-4"><span class="text-uppercase fw-bold">totale:</span>€</p>
+    <button type="button" class="btn btn-success text-uppercase fw-bold">acquista ora</button>
   </div>
 
 </div>

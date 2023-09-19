@@ -13,7 +13,6 @@ export class CartComponent implements OnInit {
   cartIsEmpty: boolean = true;
 
   booksArray: any[] = [];
-  booksSellsUnit: any[] = [];
 
   constructor(private cartService: CartService, private shelterService: ApiShelterService ) { }
 
@@ -30,19 +29,35 @@ export class CartComponent implements OnInit {
 
       for(let e of keys) {
         const bookData = this.parseKeyToObject(e); //parse data from key string
-        this.shelterService.getBook(bookData.idBook).subscribe(bookFound => {
-          this.booksArray.push(bookFound);
+
+        this.shelterService.getBook(bookData.idBook).subscribe(book => {
+
+          const newObj = {
+            "idBook": book.idBook,
+            "title": book.title,
+            "coverLink": book.coverLink,
+            "price": book.price,
+            "quantity": cart.booksWithQuantity[e]
+          }
+
+          this.booksArray.push(newObj);
+
         });
 
-        this.booksSellsUnit.push(cart.booksWithQuantity[e]);
       }
 
-      if(this.booksArray,isEmpty()){
+      if(this.booksArray.length === 0){
         this.cartIsEmpty = false;
       }
 
-      console.log(this.booksArray);
+    });
+  }
 
+  getBook(idBook: string): any {
+    let book: any;
+    this.shelterService.getBook(idBook)
+      .subscribe(response => {
+        book = response;
     });
   }
 
