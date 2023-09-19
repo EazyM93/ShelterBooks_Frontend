@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 import { ApiShelterService } from 'src/app/service/api-shelter.service';
 import { UserServiceService } from 'src/app/service/user-service.service';
 
@@ -26,7 +27,14 @@ export class BookDetailsComponent implements OnInit {
 	ebookSize: number = 0;
   ebookPrice: number = 0;
 
-  constructor(private route: ActivatedRoute, private shelterService: ApiShelterService, private userService: UserServiceService) { }
+  isBookInWishlist: boolean = false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private shelterService: ApiShelterService,
+    private userService: UserServiceService,
+    private authService: AuthService
+    ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(idRecived => {
@@ -47,12 +55,35 @@ export class BookDetailsComponent implements OnInit {
           this.availableEbook = response.availableEbook;
           this.ebookSize = response.ebookSize;
           this.ebookPrice = response.ebookPrice;
+          this.isBookInWishlist = false;
         });
     });
+
+    this.isBookInWishListMethod();
+
   }
 
   addBookToWishList(): void{
-    this.userService.addBookToWishlist(this.idBook).subscribe();
+    this.userService.addBookToWishlist(this.idBook).subscribe(() => {
+      this.isBookInWishlist = true;
+    });
   }
 
+  removeBookFromWishList(){
+    this.userService.removeBookFromWishlist(this.idBook).subscribe(() => {
+      this.isBookInWishlist = false;
+    });
+  }
+
+  isBookInWishListMethod(): void{
+    this.authService.getCurrentUserInfo().subscribe((response: any) => {
+      let currentWishlist = response.wishlist;
+      console.log(currentWishlist);
+      for(let book of currentWishlist) {
+        if(this.idBook === book.idBook){
+          this.isBookInWishlist = true;
+        }
+      }
+    });
+  }
 }

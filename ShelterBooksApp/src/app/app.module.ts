@@ -17,6 +17,7 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CurrentUserPageComponent } from './components/current-user-page/current-user-page.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { UserWishlistComponent } from './components/user-wishlist/user-wishlist.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
@@ -29,7 +30,8 @@ const routes: Route[] = [
     { path: 'update', component: UpdateComponent }
   ]},
   { path: 'userList', component: UserListComponent },
-  { path: 'bookDetails/:id', component: BookDetailsComponent }
+  { path: 'bookDetails/:id', component: BookDetailsComponent },
+  { path: 'userWishlist', component: UserWishlistComponent}
 ];
 
 @NgModule({
@@ -45,7 +47,8 @@ const routes: Route[] = [
     BookDetailsComponent,
     SidebarComponent,
     CurrentUserPageComponent,
-    UserListComponent
+    UserListComponent,
+    UserWishlistComponent
   ],
   imports: [
     BrowserModule,

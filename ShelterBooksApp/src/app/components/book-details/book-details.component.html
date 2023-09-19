@@ -5,7 +5,14 @@
     </div>
     <div id="info" class="p-3 text-white overflow-auto">
         <h2 class="p-1 rounded-4 mb-4">{{title}} ({{author}})</h2>
-        <button type="button" class="btn wish rounded-4 mb-3" (click)="addBookToWishList()">Aggiungi alla wishlist</button>
+
+        <div *ngIf="!isBookInWishlist; else isInWish">
+          <button type="button" class="btn notWish rounded-4 mb-3" (click)="addBookToWishList()">Aggiungi alla wishlist</button>
+        </div>
+        <ng-template #isInWish>
+          <button type="button" class="btn wish rounded-4 mb-3" (click)="removeBookFromWishList()">Rimuovi dalla wishlist</button>
+        </ng-template>
+
         <p class="mb-3 fs-5">{{description}}</p>
         <p class="mb-3 fs-4"><span class="fw-bold">ISBN</span>: {{isbn}}</p>
         <p class="mb-3 fs-4"><span class="fw-bold">Casa Editrice</span>: {{publisher}}</p>

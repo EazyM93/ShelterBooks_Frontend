@@ -19,6 +19,10 @@ export class UserServiceService {
     return this._http.post<any>(`${this.userUrl}/addWishlist/${idBook}`, null);
   }
 
+  removeBookFromWishlist(idBook: string): Observable<any>{
+    return this._http.post<any>(`${this.userUrl}/removeWishlist/${idBook}`, null);
+  }
+
   updateCurrentUser(
     image: string,
     name: string,
