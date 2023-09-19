@@ -1,0 +1,22 @@
+<div class="row">
+
+  <div id="cart" class="col p-3">
+
+    <div *ngIf="cartIsEmpty; else isNotEmpty" class="text-center">
+      <p class="text-white fw-bold fs-1">Il carrello è vuoto</p>
+    </div>
+
+    <ng-template #isNotEmpty>
+
+    </ng-template>
+  </div>
+
+  <div id="summary" class="col-2 mx-4 text-center rounded-4">
+    <h3 class="p-2 rounded-top-4">riepilogo</h3>
+    <p><span class="text-uppercase fw-bold">totale:</span>€</p>
+    <button type="button" class="btn btn-success text-uppercase fw-bold mb-4">acquista ora</button>
+  </div>
+
+</div>
+
+

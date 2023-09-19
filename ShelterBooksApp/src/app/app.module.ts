@@ -18,6 +18,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CurrentUserPageComponent } from './components/current-user-page/current-user-page.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserWishlistComponent } from './components/user-wishlist/user-wishlist.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
@@ -31,7 +32,8 @@ const routes: Route[] = [
   ]},
   { path: 'userList', component: UserListComponent },
   { path: 'bookDetails/:id', component: BookDetailsComponent },
-  { path: 'userWishlist', component: UserWishlistComponent}
+  { path: 'userWishlist', component: UserWishlistComponent},
+  { path: 'cart', component: CartComponent}
 ];
 
 @NgModule({
@@ -48,7 +50,8 @@ const routes: Route[] = [
     SidebarComponent,
     CurrentUserPageComponent,
     UserListComponent,
-    UserWishlistComponent
+    UserWishlistComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
