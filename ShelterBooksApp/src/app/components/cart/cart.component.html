@@ -7,6 +7,16 @@
     </div>
 
     <ng-template #isNotEmpty>
+      <div *ngFor="let book of booksArray; let i = index">
+        <div class="d-flex">
+        <div>
+          <img [src]="book.coverLink" style="width: 50px;" alt="">
+        </div>
+        <div>
+
+        </div>
+      </div>
+      </div>
 
     </ng-template>
   </div>

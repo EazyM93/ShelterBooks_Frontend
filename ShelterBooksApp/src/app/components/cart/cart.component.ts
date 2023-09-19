@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, isEmpty } from 'rxjs';
+import { ApiShelterService } from 'src/app/service/api-shelter.service';
 import { CartService } from 'src/app/service/cart.service';
 
 @Component({
@@ -10,9 +11,11 @@ import { CartService } from 'src/app/service/cart.service';
 export class CartComponent implements OnInit {
 
   cartIsEmpty: boolean = true;
-  cartElements: any[] = [];
 
-  constructor(private cartService: CartService) { }
+  booksArray: any[] = [];
+  booksSellsUnit: any[] = [];
+
+  constructor(private cartService: CartService, private shelterService: ApiShelterService ) { }
 
   ngOnInit(): void {
 
@@ -23,9 +26,27 @@ export class CartComponent implements OnInit {
   getCurrentCart(): void{
     this.cartService.getCurrentCart().subscribe(cart => {
 
+      const keys = Object.keys(cart.booksWithQuantity); // extract keys from map
+
+      for(let e of keys) {
+        const bookData = this.parseKeyToObject(e); //parse data from key string
+        this.shelterService.getBook(bookData.idBook).subscribe(bookFound => {
+          this.booksArray.push(bookFound);
+        });
+
+        this.booksSellsUnit.push(cart.booksWithQuantity[e]);
+      }
+
+      if(this.booksArray,isEmpty()){
+        this.cartIsEmpty = false;
+      }
+
+      console.log(this.booksArray);
+
     });
   }
 
+  //parse data from key string
   parseKeyToObject(key: string): any {
     const matches = key.match(/(\w+)=([^,]+)/g);
     const result: any = {};
