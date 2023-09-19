@@ -14,4 +14,8 @@ export class CartService {
   getCurrentCart(): Observable<any> {
     return this._http.get<any>(`${this.cartUrl}/currentCart`);
   }
+
+  addBookToCart(idBook: string): Observable<any> {
+    return this._http.post<any>(`${this.cartUrl}/addBook/${idBook}`, null);
+  }
 }

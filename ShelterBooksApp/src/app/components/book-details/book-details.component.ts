@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ApiShelterService } from 'src/app/service/api-shelter.service';
+import { CartService } from 'src/app/service/cart.service';
 import { UserServiceService } from 'src/app/service/user-service.service';
 
 @Component({
@@ -33,7 +34,8 @@ export class BookDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private shelterService: ApiShelterService,
     private userService: UserServiceService,
-    private authService: AuthService
+    private authService: AuthService,
+    private cartService: CartService
     ) { }
 
   ngOnInit(): void {
@@ -66,6 +68,14 @@ export class BookDetailsComponent implements OnInit {
   addBookToWishList(): void{
     this.userService.addBookToWishlist(this.idBook).subscribe(() => {
       this.isBookInWishlist = true;
+    });
+  }
+
+  addBookToCart(): void{
+    this.cartService.addBookToCart(this.idBook).subscribe(() => {
+      if(this.isBookInWishlist){
+        this.removeBookFromWishList();
+      }
     });
   }
 
