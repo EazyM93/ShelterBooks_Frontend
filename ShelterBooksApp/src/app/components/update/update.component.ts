@@ -31,6 +31,9 @@ export class UpdateComponent implements OnInit {
 	ebookSize: number = 0;
   ebookPrice: number = 0;
 
+  currentPage: number = 0;
+  totalPages: number = 0;
+
   constructor(private shelterService: ApiShelterService) { }
 
   ngOnInit(): void {
@@ -73,8 +76,11 @@ export class UpdateComponent implements OnInit {
 
   getBookListByTitle(): void {
     this.shelterService
-      .filterBooks('', this.titleFilter, '', '', 0, 10000, '', 0, 'title')
+      .filterBooks('', this.titleFilter, '', '', 0, 10000, '', this.currentPage, 'title')
       .subscribe((response: any) => {
+        const totalItems = response.totalElements;
+        const pageSize = response.size;
+        (response.content.length === 0) ? this.totalPages = 0 : this.totalPages = Math.ceil(totalItems / pageSize) - 1;
         this.booksArray=response.content;
       }
     );
@@ -82,8 +88,11 @@ export class UpdateComponent implements OnInit {
 
   getBookListByIsbn(): void {
     this.shelterService
-      .filterBooks(this.isbnFilter, '', '', '', 0, 10000, '', 0, 'title')
+      .filterBooks(this.isbnFilter, '', '', '', 0, 10000, '', this.currentPage, 'title')
       .subscribe((response: any) => {
+        const totalItems = response.totalElements;
+        const pageSize = response.size;
+        (response.content.length === 0) ? this.totalPages = 0 : this.totalPages = Math.ceil(totalItems / pageSize) - 1;
         this.booksArray=response.content;
       }
     );
@@ -128,4 +137,13 @@ export class UpdateComponent implements OnInit {
       .subscribe();
   }
 
+  next(): void {
+    this.currentPage += 1;
+    this.getBookListByTitle();
+  }
+
+  previous(): void {
+    this.currentPage -= 1;
+    this.getBookListByTitle();
+  }
 }

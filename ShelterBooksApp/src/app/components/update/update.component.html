@@ -2,7 +2,7 @@
 
 <input type="text" class="form-control mb-3" id="isbn" aria-describedby="isbn" [(ngModel)]="isbnFilter" name="isbn" (ngModelChange)="onIsbnInputChange()" placeholder="cerca per isbn" autocomplete="off">
 
-<div id="tabBooks" class="p-3 rounded">
+<div id="tabBooks" class="p-3 rounded" style="height: 653px;">
   <div class="row row-cols-6 mb-2" style="text-transform: uppercase;">
     <h6>titolo</h6>
     <h6 class="text-center">isbn</h6>
@@ -244,6 +244,12 @@
 
     </div>
   </div>
+</div>
+
+<div class="d-flex align-items-center justify-content-center">
+  <button type="button" class="btn text-white fs-1 p-0 border border-0 me-3" [disabled]="currentPage === 0" (click)="previous()"><i class="bi bi-caret-left-square-fill p-0"></i></button>
+  <p class="m-0 p-0 text-white fs-2">{{currentPage}}</p>
+  <button type="button" class="btn text-white fs-1 p-0 border border-0 ms-3" [disabled]="currentPage === totalPages" (click)="next()"><i class="bi bi-caret-right-square-fill"></i></button>
 </div>
 
 
