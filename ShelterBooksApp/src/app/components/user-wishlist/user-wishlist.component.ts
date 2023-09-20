@@ -27,9 +27,6 @@ export class UserWishlistComponent implements OnInit {
         this.wishlistIsEmpty = false;
       }
     });
-
-
-
   }
 
 }
