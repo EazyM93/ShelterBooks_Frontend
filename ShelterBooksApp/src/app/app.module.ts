@@ -19,21 +19,23 @@ import { CurrentUserPageComponent } from './components/current-user-page/current
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserWishlistComponent } from './components/user-wishlist/user-wishlist.component';
 import { CartComponent } from './components/cart/cart.component';
+import { UserLibraryComponent } from './components/user-library/user-library.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
   { path: 'homepage', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'currentUserPage', component: CurrentUserPageComponent},
+  { path: 'currentUserPage', component: CurrentUserPageComponent },
   { path: 'bookManager', component: BookManagerComponent, children: [
     { path: 'createBook', component: CreateBookComponent },
     { path: 'update', component: UpdateComponent }
   ]},
   { path: 'userList', component: UserListComponent },
   { path: 'bookDetails/:id', component: BookDetailsComponent },
-  { path: 'userWishlist', component: UserWishlistComponent},
-  { path: 'cart', component: CartComponent}
+  { path: 'userWishlist', component: UserWishlistComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'userLibrary', component: UserLibraryComponent }
 ];
 
 @NgModule({
@@ -51,7 +53,8 @@ const routes: Route[] = [
     CurrentUserPageComponent,
     UserListComponent,
     UserWishlistComponent,
-    CartComponent
+    CartComponent,
+    UserLibraryComponent
   ],
   imports: [
     BrowserModule,
