@@ -1,0 +1,87 @@
+<div class="d-flex mb-3">
+
+  <select id="filters" class="form-select text-start me-3 rounded-4" aria-label="genre" [(ngModel)]="filterUsed" name="filters" (ngModelChange)="onFilterChange()">
+    <option value="title">titolo</option>
+    <option value="isbn">isbn</option>
+    <option value="author">autore</option>
+    <option value="publisher">editore</option>
+  </select>
+
+  <input type="text" class="form-control rounded-4" id="title" aria-describedby="title" [(ngModel)]="searchBox" name="title" (ngModelChange)="onSearchInputChange()" placeholder="scrivi cosa stai cercando" autocomplete="off">
+
+</div>
+
+<div class="d-flex mb-5">
+  <div class="d-flex flex-column align-items-center me-3">
+    <label for="priceMin" class="form-label m-0 text-center text-white">Prezzo Minimo</label>
+    <input type="text" class="form-control rounded-4 text-center" id="priceMin" aria-describedby="priceMin" [(ngModel)]="priceMin" (ngModelChange)="onSearchInputChange()" name="priceMin" placeholder="min" autocomplete="off">
+  </div>
+  <div class="d-flex flex-column align-items-center me-3">
+    <label for="priceMax" class="form-label m-0 text-center text-white">Prezzo Massimo</label>
+    <input type="text" class="form-control rounded-4 text-center" id="priceMax" aria-describedby="priceMax" [(ngModel)]="priceMax" (ngModelChange)="onSearchInputChange()" name="priceMax" placeholder="max" autocomplete="off">
+  </div>
+  <div class="d-flex flex-column align-items-center me-3">
+    <label for="genre" class="form-label m-0 text-center text-white">Genere</label>
+    <select id="genre" class="form-select text-center" aria-label="genre" [(ngModel)]="genreFilter" name="genre" (ngModelChange)="onSearchInputChange()">
+      <option selected></option>
+      <option value="ART">arte</option>
+      <option value="ASTRONOMY">astronomia</option>
+      <option value="ADVENTURE">avventura</option>
+      <option value="CHILDREN">bambini</option>
+      <option value="BIOGRAPHY">biografia</option>
+      <option value="BUISNESS">business</option>
+      <option value="CINEMA">cinema</option>
+      <option value="CLASSIC">classici</option>
+      <option value="COOK">cucina</option>
+      <option value="ECONOMIC">economia</option>
+      <option value="SCI_FI">fantascienza</option>
+      <option value="FANTASY">fantasy</option>
+      <option value="PHILOSOPHY">filosofia</option>
+      <option value="EDUCATION">formazione</option>
+      <option value="PHOTOGRAPHY">fotografia</option>
+      <option value="COMIC">fumetti</option>
+      <option value="GARDENING">giardinaggio</option>
+      <option value="JOURNALISM">giornalismo</option>
+      <option value="YOUNG_ADULT">giovani adulti</option>
+      <option value="GRAPHIC_NOVEL">graphic novel</option>
+      <option value="GUIDE">guide</option>
+      <option value="MYSTERY">giallo</option>
+      <option value="HORROR">horror</option>
+      <option value="LINGUISTIC">linguistica</option>
+      <option value="MATHEMATICS">matematica</option>
+      <option value="MUSIC">musica</option>
+      <option value="NOIR">noir</option>
+      <option value="PARANORMAL">paranormale</option>
+      <option value="POETRY">poesia</option>
+      <option value="POLITICAL">politica</option>
+      <option value="PSYCHOLOGY">psicologia</option>
+      <option value="SHORT_STORIES">racconti brevi</option>
+      <option value="RELIGION">religione</option>
+      <option value="NOVEL">romanzo</option>
+      <option value="ROMANCE">romanzo rosa</option>
+      <option value="SCIENCE">scienza</option>
+      <option value="SOCIAL_SCIENCE">scienze sociali</option>
+      <option value="SPIRITUAL">spirituale</option>
+      <option value="SPORT">sport</option>
+      <option value="HISTORICAL">storico</option>
+      <option value="TECHNOLOGY">tecnologia</option>
+      <option value="THRILLER">thriller</option>
+      <option value="TRUE_CRIME">true crime</option>
+      <option value="TRAVEL">viaggi</option>
+    </select>
+  </div>
+  <div class="d-flex align-items-end">
+    <button type="button" class="btn resetFilter" (click)="resetFilter()">Reset Filtri</button>
+  </div>
+</div>
+
+<div class="row row-cols-5">
+  <div *ngFor="let book of booksArray">
+    <div class="mb-5 text-center">
+      <img [src]="book.coverLink" class="rounded-4" alt="..">
+    </div>
+  </div>
+</div>
+
+
+

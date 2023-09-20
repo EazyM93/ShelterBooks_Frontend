@@ -1,0 +1,22 @@
+img{
+  width: 150px;
+  height: 240px;
+}
+
+#filters{
+  background-color: rgb(213, 210, 210);
+  width: 8em;
+}
+
+#priceMin, #priceMax {
+  width: 70px;
+}
+
+.form-select{
+  text-transform: uppercase;
+}
+
+.resetFilter{
+  background-color: rgb(242, 135, 135);
+  color: white;
+}
