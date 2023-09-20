@@ -4,25 +4,25 @@
     <div *ngIf="currentUserStatus && userLogged" class="d-flex flex-column align-items-center border-bottom mb-3">
       <h4 class="mb-4">pannello admin</h4>
       <div class="d-flex flex-column border-top">
-        <a class="nav-link rw rounded-4 mt-3 mb-1 px-3 d-flex align-items-center" [routerLink]="['currentUserPage']"><i class="bi bi-person-fill-gear me-3 fs-4"></i>dati admin</a>
-        <a class="nav-link rw rounded-4 mb-1 px-3 d-flex align-items-center" [routerLink]="['bookManager']"><i class="bi bi-book me-3 fs-4"></i>gestisci libri</a>
-        <a class="nav-link rw rounded-4 mb-1 px-3 d-flex align-items-center" [routerLink]="['userList']"><i class="bi bi-person-lines-fill me-3 fs-4"></i>gestisci utenti</a>
-        <a class="nav-link rw rounded-4 mb-3 px-3 d-flex align-items-center" href="#"><i class="bi bi-box-seam me-3 fs-4"></i>gestisci ordini</a>
+        <a class="nav-link rw rounded-4 mt-3 mb-1 px-3 d-flex align-items-center" [routerLink]="['currentUserPage']" routerLinkActive="active"><i class="bi bi-person-fill-gear me-3 fs-4"></i>dati admin</a>
+        <a class="nav-link rw rounded-4 mb-1 px-3 d-flex align-items-center" [routerLink]="['bookManager']" routerLinkActive="active"><i class="bi bi-book me-3 fs-4"></i>gestisci libri</a>
+        <a class="nav-link rw rounded-4 mb-1 px-3 d-flex align-items-center" [routerLink]="['userList']" routerLinkActive="active"><i class="bi bi-person-lines-fill me-3 fs-4"></i>gestisci utenti</a>
+        <a class="nav-link rw rounded-4 mb-3 px-3 d-flex align-items-center" href="#" routerLinkActive="active"><i class="bi bi-box-seam me-3 fs-4"></i>gestisci ordini</a>
       </div>
     </div>
 
     <div *ngIf="!currentUserStatus && userLogged" class="d-flex flex-column align-items-center border-bottom mb-3">
       <h5 class="mb-4">{{currentUserName}} {{currentUserSurname}}</h5>
       <div class="d-flex flex-column border-top">
-        <a class="nav-link rw rounded-4 mt-3 mb-3 px-3 d-flex align-items-center" [routerLink]="['catalog']"><i class="bi bi-collection-fill me-3 fs-4"></i>catalogo</a>
+        <a class="nav-link rw rounded-4 mt-3 mb-3 px-3 d-flex align-items-center" [routerLink]="['catalog']" routerLinkActive="active"><i class="bi bi-collection-fill me-3 fs-4"></i>catalogo</a>
       </div>
       <div class="d-flex flex-column border-top">
-        <a class="nav-link rw rounded-4 mt-3 mb-3 px-3 d-flex align-items-center" [routerLink]="['currentUserPage']"><i class="bi bi-person-fill-gear me-3 fs-4"></i>profilo</a>
-        <a class="nav-link rw rounded-4 mb-3 px-3 d-flex align-items-center" [routerLink]="['userWishlist']"><i class="bi bi-bag-heart-fill me-3 fs-4"></i>wishlist</a>
-        <a class="nav-link rw rounded-4 mb-3 px-3 d-flex align-items-center" [routerLink]="['userLibrary']"><i class="bi bi-bookshelf me-3 fs-4"></i>Biblioteca</a>
+        <a class="nav-link rw rounded-4 mt-3 mb-3 px-3 d-flex align-items-center" [routerLink]="['currentUserPage']" routerLinkActive="active"><i class="bi bi-person-fill-gear me-3 fs-4"></i>profilo</a>
+        <a class="nav-link rw rounded-4 mb-3 px-3 d-flex align-items-center" [routerLink]="['userWishlist']" routerLinkActive="active"><i class="bi bi-bag-heart-fill me-3 fs-4"></i>wishlist</a>
+        <a class="nav-link rw rounded-4 mb-3 px-3 d-flex align-items-center" [routerLink]="['userLibrary']" routerLinkActive="active"><i class="bi bi-bookshelf me-3 fs-4"></i>Biblioteca</a>
       </div>
       <div class="d-flex flex-column border-top">
-        <a class="nav-link rw rounded-4 mt-3 mb-3 px-3 d-flex align-items-center" [routerLink]="['cart']"><i class="bi bi-cart4 me-3 fs-4"></i>carrello</a>
+        <a class="nav-link rw rounded-4 mt-3 mb-3 px-3 d-flex align-items-center" [routerLink]="['cart']" routerLinkActive="active"><i class="bi bi-cart4 me-3 fs-4"></i>carrello</a>
       </div>
     </div>
 

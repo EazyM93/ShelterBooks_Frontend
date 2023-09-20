@@ -21,7 +21,15 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.email, this.password).subscribe(
       response => {
         if (response.accessToken) {
-          this.router.navigate(['/homepage']); // reindirizza l'utente alla dashboard o alla home dopo il login
+          this.authService.getCurrentUserInfo()
+            .subscribe(info => {
+              if(info.role === 'ADMIN'){
+                this.router.navigate(['/currentUserPage']);
+              }else{
+                this.router.navigate(['/homepage']);
+              }
+            });
+
         }
       },
       error => {

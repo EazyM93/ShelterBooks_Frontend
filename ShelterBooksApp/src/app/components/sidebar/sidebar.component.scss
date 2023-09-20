@@ -21,7 +21,7 @@ h4, h5{
   font-weight: bold;
   text-transform: uppercase;
   &:hover{
-    background-color: #83a0a2;
+    background-color: #a4afb0;
     filter: brightness(90%);
   }
 }
@@ -31,9 +31,13 @@ h4, h5{
   font-weight: bold;
   text-transform: uppercase;
   &:hover{
-    background-color: #BFD0D1;
-    filter: brightness(80%);
+    background-color: #a4afb0;
+    filter: brightness(90%);
   }
+}
+
+.active{
+  background-color: #a4afb0;
 }
 
 // #login{

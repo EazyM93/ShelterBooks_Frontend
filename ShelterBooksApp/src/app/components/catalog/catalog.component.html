@@ -22,7 +22,7 @@
   </div>
   <div class="d-flex flex-column align-items-center me-3">
     <label for="genre" class="form-label m-0 text-center text-white">Genere</label>
-    <select id="genre" class="form-select text-center" aria-label="genre" [(ngModel)]="genreFilter" name="genre" (ngModelChange)="onSearchInputChange()">
+    <select id="genre" class="form-select text-center rounded-4" aria-label="genre" [(ngModel)]="genreFilter" name="genre" (ngModelChange)="onSearchInputChange()">
       <option selected></option>
       <option value="ART">arte</option>
       <option value="ASTRONOMY">astronomia</option>
@@ -71,14 +71,14 @@
     </select>
   </div>
   <div class="d-flex align-items-end">
-    <button type="button" class="btn resetFilter" (click)="resetFilter()">Reset Filtri</button>
+    <button type="button" class="btn resetFilter rounded-4" (click)="resetFilter()">Reset Filtri</button>
   </div>
 </div>
 
 <div class="row row-cols-5">
   <div *ngFor="let book of booksArray">
     <div class="mb-5 text-center">
-      <img [src]="book.coverLink" class="rounded-4" alt="..">
+      <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" class="rounded-4 book-cover" alt=".."></a>
     </div>
   </div>
 </div>
