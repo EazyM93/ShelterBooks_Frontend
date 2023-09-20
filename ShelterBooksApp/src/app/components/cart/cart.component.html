@@ -28,10 +28,11 @@
     </ng-template>
   </div>
 
-  <div id="summary" class="col-2 mx-4 text-center rounded-4">
+  <div id="summary" class="col-2 mx-4 text-center rounded-4" style="height: max-content;">
     <h3 class="p-2 rounded-top-4">riepilogo</h3>
-    <p class="fs-4"><span class="text-uppercase fw-bold">totale:</span>€</p>
-    <button type="button" class="btn btn-success text-uppercase fw-bold">acquista ora</button>
+    <p class="fs-4 text-uppercase fw-bold mb-0">totale</p>
+    <p class="fs-4">{{finalPrice}} €</p>
+    <button type="button" class="btn btn-success text-uppercase fw-bold mb-3">acquista ora</button>
   </div>
 
 </div>

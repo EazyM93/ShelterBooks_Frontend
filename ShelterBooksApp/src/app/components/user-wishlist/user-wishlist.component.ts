@@ -10,6 +10,8 @@ export class UserWishlistComponent implements OnInit {
 
   currentWishlist: any = null;
 
+  wishlistIsEmpty: boolean = true;
+
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -20,7 +22,14 @@ export class UserWishlistComponent implements OnInit {
     this.authService.getCurrentUserInfo().subscribe(response => {
       this.currentWishlist = response.wishlist;
       console.log(this.currentWishlist)
+
+      if(this.currentWishlist.length > 0){
+        this.wishlistIsEmpty = false;
+      }
     });
+
+
+
   }
 
 }

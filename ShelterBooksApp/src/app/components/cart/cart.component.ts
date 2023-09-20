@@ -14,6 +14,8 @@ export class CartComponent implements OnInit {
 
   booksArray: any[] = [];
 
+  finalPrice: number = 0;
+
   constructor(private cartService: CartService, private shelterService: ApiShelterService ) { }
 
   ngOnInit(): void {
@@ -41,6 +43,8 @@ export class CartComponent implements OnInit {
           }
 
           this.booksArray.push(newObj);
+
+          this.finalPrice += book.price * cart.booksWithQuantity[e];
 
         });
 
