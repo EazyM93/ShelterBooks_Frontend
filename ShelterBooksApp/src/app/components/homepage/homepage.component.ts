@@ -16,7 +16,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBooksOrderByTitle();
-    this.getBooksOrderByInsertionDate();
+    this.getBooksOrderByInsertionDate(0);
     this.getBooksOrderByAllSelledCopies();
   }
 
@@ -28,14 +28,16 @@ export class HomepageComponent implements OnInit {
       })
   }
 
-  getBooksOrderByInsertionDate(): void{
-    this._apiservice.getBooks(0, 'insertionDate')
+  getBooksOrderByInsertionDate(pageNumber: number): void{
+    this._apiservice.getBooks(pageNumber, 'insertionDate')
       .subscribe((response: any)=>{
           const books = response.content;
-          for(let i = books.length - 1; i >= books.length - 5; i--){
-            this.news.push(response.content[i]);
+          for(let i = books.length - 1; i >= 0; i--){
+            this.news.push(books[i]);
           }
-          console.log(this.news);
+          if(pageNumber < response.totalPages - 1){
+            this.getBooksOrderByInsertionDate(pageNumber + 1);
+          }
       })
   }
 
@@ -44,7 +46,7 @@ export class HomepageComponent implements OnInit {
         .subscribe((response: any)=>{
         const books = response.content;
         for(let i = books.length - 1; i >= books.length - 5; i--){
-          this.bestseller.push(response.content[i]);
+          this.bestseller.push(books[i]);
         }
           console.log(this.bestseller);
       })
