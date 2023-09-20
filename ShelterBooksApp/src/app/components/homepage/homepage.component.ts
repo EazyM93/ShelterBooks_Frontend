@@ -32,11 +32,13 @@ export class HomepageComponent implements OnInit {
     this._apiservice.getBooks(pageNumber, 'insertionDate')
       .subscribe((response: any)=>{
           const books = response.content;
-          for(let i = books.length - 1; i >= 0; i--){
-            this.news.push(books[i]);
+          for(let i = 0; i < books.length; i++){
+            this.news.unshift(books[i]);
           }
           if(pageNumber < response.totalPages - 1){
             this.getBooksOrderByInsertionDate(pageNumber + 1);
+          }else{
+            this.news.splice(5);
           }
       })
   }
