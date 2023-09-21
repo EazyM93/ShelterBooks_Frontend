@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-payment',
@@ -12,7 +13,7 @@ export class PaymentComponent implements OnInit {
 
   @ViewChild('paymentRef', {static: true}) paymentRef!: ElementRef;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(totalAmountRecived => {
@@ -41,8 +42,11 @@ export class PaymentComponent implements OnInit {
           onApprove: (data: any, actions: any) => {
             return actions.order.capture().then((details: any) => {
               if(details.status === 'COMPLETED') {
-                const transactionId: any = details.id;
-                this.router.navigate(['confirmation', transactionId]);
+                this.orderService.createOrder().subscribe(() => {
+                  const transactionId: any = details.id;
+                  this.router.navigate(['confirmation', transactionId]);
+                });
+
               }
               console.log(details)
             });
