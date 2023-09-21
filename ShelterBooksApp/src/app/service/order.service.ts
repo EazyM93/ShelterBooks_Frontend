@@ -12,7 +12,7 @@ export class OrderService {
   constructor(private _http:HttpClient) { }
 
   createOrder(): Observable<any> {
-    return this._http.post<any>(`${this.orderUrl}`, null);
+    return this._http.get<any>(`${this.orderUrl}/createOrder`);
   }
 
 }
