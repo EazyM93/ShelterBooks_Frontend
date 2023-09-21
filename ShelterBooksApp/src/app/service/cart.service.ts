@@ -20,6 +20,10 @@ export class CartService {
     return this._http.post<any>(`${this.cartUrl}/addBook/${idBook}`, null);
   }
 
+  removeBookFromCart(idBook: string): Observable<any> {
+    return this._http.post<any>(`${this.cartUrl}/removeBook/${idBook}`, null);
+  }
+
   clearCart(): Observable<any> {
     return this._http.post<any>(`${this.cartUrl}/clearCart`, null);
   }

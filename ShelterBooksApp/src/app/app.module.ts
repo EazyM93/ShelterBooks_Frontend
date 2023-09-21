@@ -23,6 +23,7 @@ import { UserLibraryComponent } from './components/user-library/user-library.com
 import { CatalogComponent } from './components/catalog/catalog.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
@@ -41,7 +42,8 @@ const routes: Route[] = [
   { path: 'userLibrary', component: UserLibraryComponent },
   { path: 'catalog', component: CatalogComponent },
   { path: 'payment/:totalAmount', component: PaymentComponent },
-  { path: 'confirmation/:transactionId', component: ConfirmationComponent}
+  { path: 'confirmation/:transactionId', component: ConfirmationComponent },
+  { path: 'orders', component: OrdersComponent}
 ];
 
 @NgModule({
@@ -63,7 +65,8 @@ const routes: Route[] = [
     UserLibraryComponent,
     CatalogComponent,
     PaymentComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

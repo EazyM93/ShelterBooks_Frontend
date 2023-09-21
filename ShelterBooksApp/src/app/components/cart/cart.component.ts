@@ -50,9 +50,7 @@ export class CartComponent implements OnInit {
 
       }
 
-      if(this.booksArray.length === 0){
-        this.cartIsEmpty = false;
-      }
+      (this.booksArray.length === 0) ? this.cartIsEmpty = false : this.cartIsEmpty = true;
 
     });
   }
@@ -78,6 +76,10 @@ export class CartComponent implements OnInit {
     }
 
     return result;
+  }
+
+  removeBook(idBook: string): void {
+    this.cartService.removeBookFromCart(idBook).subscribe();
   }
 
 }
