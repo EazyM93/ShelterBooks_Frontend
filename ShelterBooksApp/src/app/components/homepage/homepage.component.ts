@@ -17,14 +17,13 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.getBooksOrderByTitle();
     this.getBooksOrderByInsertionDate(0);
-    this.getBooksOrderByAllSelledCopies();
+    this.getBooksOrderByAllSelledCopies(0);
   }
 
   getBooksOrderByTitle(): void{
     this._apiservice.getBooks(0, 'title')
       .subscribe((response: any)=>{
           this.booksArray=response.content;
-          console.log(this.booksArray);
       })
   }
 
@@ -43,14 +42,19 @@ export class HomepageComponent implements OnInit {
       })
   }
 
-  getBooksOrderByAllSelledCopies(): void{
-    this._apiservice.getBooks(0, 'allSelledCopies')
+  getBooksOrderByAllSelledCopies(pageNumber: number): void{
+    this._apiservice.getBooks(pageNumber, 'allSelledCopies')
         .subscribe((response: any)=>{
         const books = response.content;
-        for(let i = books.length - 1; i >= books.length - 5; i--){
-          this.bestseller.push(books[i]);
+        for(let i = 0; i < books.length; i++){
+          this.bestseller.unshift(books[i]);
         }
-          console.log(this.bestseller);
+        if(pageNumber < response.totalPages - 1){
+          this.getBooksOrderByAllSelledCopies(pageNumber + 1);
+        }else{
+          this.bestseller.splice(5);
+        }
+
       })
   }
 }

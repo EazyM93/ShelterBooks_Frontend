@@ -21,6 +21,8 @@ import { UserWishlistComponent } from './components/user-wishlist/user-wishlist.
 import { CartComponent } from './components/cart/cart.component';
 import { UserLibraryComponent } from './components/user-library/user-library.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'homepage',pathMatch: 'full' },
@@ -37,7 +39,9 @@ const routes: Route[] = [
   { path: 'userWishlist', component: UserWishlistComponent },
   { path: 'cart', component: CartComponent },
   { path: 'userLibrary', component: UserLibraryComponent },
-  { path: 'catalog', component: CatalogComponent }
+  { path: 'catalog', component: CatalogComponent },
+  { path: 'payment/:totalAmount', component: PaymentComponent },
+  { path: 'confirmation/:transactionId', component: ConfirmationComponent}
 ];
 
 @NgModule({
@@ -57,7 +61,9 @@ const routes: Route[] = [
     UserWishlistComponent,
     CartComponent,
     UserLibraryComponent,
-    CatalogComponent
+    CatalogComponent,
+    PaymentComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

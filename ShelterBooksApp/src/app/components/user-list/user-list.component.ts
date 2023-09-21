@@ -29,4 +29,10 @@ export class UserListComponent implements OnInit {
       });
   }
 
+  deleteUser(idUser: string): void {
+    this.userService.deleteUser(idUser).subscribe(() => {
+      this.getUsers();
+    });
+  }
+
 }
