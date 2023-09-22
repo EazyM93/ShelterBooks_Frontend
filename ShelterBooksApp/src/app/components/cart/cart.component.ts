@@ -50,7 +50,7 @@ export class CartComponent implements OnInit {
 
       }
 
-      (this.booksArray.length === 0) ? this.cartIsEmpty = false : this.cartIsEmpty = true;
+      (this.booksArray.length === 0) ? this.cartIsEmpty = true : this.cartIsEmpty = false;
 
     });
   }
