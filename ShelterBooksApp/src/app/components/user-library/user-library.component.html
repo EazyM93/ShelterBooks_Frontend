@@ -1,16 +1,38 @@
-<div *ngIf="libraryIsEmpty; else isNotEmpty" class="text-center">
-  <p class="text-white fw-bold fs-1">La biblioteca è vuota</p>
+<div class="d-none d-lg-block">
+  <div *ngIf="libraryIsEmpty; else isNotEmpty" class="text-center">
+    <p class="text-white fw-bold fs-1">La biblioteca è vuota</p>
+  </div>
+
+  <ng-template #isNotEmpty>
+    <div class="row row-cols-4 pt-4 text-center">
+      <div *ngFor="let book of currentLibrary">
+
+        <div class="mb-4">
+          <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" style="width: 150px;" alt="" class="book-cover"></a>
+        </div>
+
+
+      </div>
+    </div>
+  </ng-template>
 </div>
 
-<ng-template #isNotEmpty>
-  <div class="row row-cols-4 pt-4 text-center">
-    <div *ngFor="let book of currentLibrary">
-
-      <div class="mb-4">
-        <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" style="width: 150px;" alt="" class="book-cover"></a>
-      </div>
-
-
-    </div>
+<div class="d-lg-none">
+  <div *ngIf="libraryIsEmpty; else isNotEmptyTwo" class="text-center">
+    <p class="text-white fw-bold fs-1">La biblioteca è vuota</p>
   </div>
-</ng-template>
+
+  <ng-template #isNotEmptyTwo>
+    <div class="row row-cols-2 pt-4 text-center">
+      <div *ngFor="let book of currentLibrary">
+
+        <div class="mb-4">
+          <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" style="width: 150px;" alt="" class="book-cover"></a>
+        </div>
+
+
+      </div>
+    </div>
+  </ng-template>
+</div>
+
