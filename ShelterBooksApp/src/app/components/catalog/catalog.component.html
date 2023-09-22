@@ -11,7 +11,7 @@
 
 </div>
 
-<div class="d-flex mb-5">
+<div class="d-flex">
   <div class="d-flex flex-column align-items-center me-3">
     <label for="priceMin" class="form-label m-0 text-center text-white">Prezzo Minimo</label>
     <input type="text" class="form-control rounded-4 text-center" id="priceMin" aria-describedby="priceMin" [(ngModel)]="priceMin" (ngModelChange)="onSearchInputChange()" name="priceMin" placeholder="min" autocomplete="off">
@@ -75,16 +75,33 @@
   </div>
 </div>
 
-<div class="row row-cols-5" style="height: 600px;">
+<div class="row row-cols-5 d-lg-flex d-none mt-5 d-flex justify-content-center" style="height: 600px;">
   <div *ngFor="let book of booksArray">
     <div class="mb-5 text-center">
       <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" class="rounded-4 book-cover" alt=".."></a>
     </div>
   </div>
+  <div class="d-flex align-items-center justify-content-center">
+    <button type="button" class="btn text-white fs-1 p-0 border border-0 me-3" [disabled]="currentPage === 0" (click)="previous()"><i class="bi bi-caret-left-square-fill p-0"></i></button>
+    <p class="m-0 p-0 text-white fs-2">{{currentPage}}</p>
+    <button type="button" class="btn text-white fs-1 p-0 border border-0 ms-3" [disabled]="currentPage === totalPages" (click)="next()"><i class="bi bi-caret-right-square-fill"></i></button>
+  </div>
 </div>
 
-<div class="d-flex align-items-center justify-content-center">
-  <button type="button" class="btn text-white fs-1 p-0 border border-0 me-3" [disabled]="currentPage === 0" (click)="previous()"><i class="bi bi-caret-left-square-fill p-0"></i></button>
-  <p class="m-0 p-0 text-white fs-2">{{currentPage}}</p>
-  <button type="button" class="btn text-white fs-1 p-0 border border-0 ms-3" [disabled]="currentPage === totalPages" (click)="next()"><i class="bi bi-caret-right-square-fill"></i></button>
+<div class="mt-3 d-lg-none">
+  <div class="d-flex align-items-center justify-content-center mb-3">
+    <button type="button" class="btn text-white fs-1 p-0 border border-0 me-3" [disabled]="currentPage === 0" (click)="previous()"><i class="bi bi-caret-left-square-fill p-0"></i></button>
+    <p class="m-0 p-0 text-white fs-2">{{currentPage}}</p>
+    <button type="button" class="btn text-white fs-1 p-0 border border-0 ms-3" [disabled]="currentPage === totalPages" (click)="next()"><i class="bi bi-caret-right-square-fill"></i></button>
+  </div>
+  <div class="row row-cols-2" style="height: 600px;">
+    <div *ngFor="let book of booksArray">
+      <div class="mb-5 text-center">
+        <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" class="rounded-4 book-cover" alt=".."></a>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
