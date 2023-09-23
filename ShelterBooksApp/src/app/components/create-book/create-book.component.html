@@ -1,19 +1,19 @@
 <form class="colored rounded-4 p-3">
 
-  <div class="row row-cols-3">
+  <div class="row row-cols-lg-3 row-cols-2 align-items-end text-center text-lg-start">
 
     <div class="mb-5">
       <label for="isbn" class="form-label">isbn</label>
       <input type="text" class="form-control" id="isbn" aria-describedby="isbn" [(ngModel)]="isbn" name="isbn">
     </div>
 
-    <div>
+    <div class="mb-5">
       <label for="title" class="form-label">titolo libro</label>
       <input type="text" class="form-control" id="title" aria-describedby="title" [(ngModel)]="title" name="title">
     </div>
 
     <div class="mb-5">
-      <label for="coverLink" class="form-label">copertina libro</label>
+      <label for="coverLink" class="form-label">copertina</label>
       <input type="text" class="form-control" id="coverLink" aria-describedby="coverLink" [(ngModel)]="coverLink" name="coverLink">
     </div>
 
@@ -121,9 +121,9 @@
 
   </div>
 
-  <div class="mb-5 d-flex">
+  <div class="mb-5 d-flex text-lg-start text-center align-items-end">
 
-    <div class="me-5">
+    <div class="px-3 px-lg-0 me-lg-3">
       <label for="ebookSize" class="form-label">dimensione ebook</label>
       <div class="input-group">
         <span class="input-group-text">MB</span>
@@ -132,7 +132,7 @@
 
     </div>
 
-    <div class="me-5">
+    <div class="px-3 px-lg-0 me-lg-3">
       <label for="ebookPrice" class="form-label">prezzo ebook</label>
       <div class="input-group">
         <span class="input-group-text">€</span>
@@ -143,7 +143,10 @@
 
   </div>
 
-  <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalSave" (click)="save()">Inserisci</button>
+  <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalSave" (click)="save()">Inserisci</button>
+  </div>
+
 </form>
 
 <div id="modalSave" class="modal fade" tabindex="-1">
