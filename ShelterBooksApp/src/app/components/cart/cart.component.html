@@ -1,6 +1,6 @@
 <div class="row d-none d-lg-flex ">
 
-  <div id="cart" class="col p-3">
+  <div id="cartOne" class="col p-3">
 
     <div *ngIf="cartIsEmpty; else isNotEmpty" class="text-center">
       <p class="text-white fw-bold fs-1">Il carrello è vuoto</p>
@@ -21,7 +21,7 @@
           <div class="col-2 d-flex flex-column justify-content-center align-items-center">
             <h5 class="text-uppercase mb-3">quantità</h5>
             <h3>{{book.quantity}}</h3>
-            <button id="remove" type="button" class="btn" (click)="removeBook(book.idBook)">Rimuovi 1</button>
+            <button id="removeOne" type="button" class="btn" (click)="removeBook(book.idBook)">Rimuovi 1</button>
           </div>
         </div>
       </div>
@@ -29,11 +29,11 @@
     </ng-template>
   </div>
 
-  <div id="summary" class="col-2 mx-4 text-center rounded-4" style="height: max-content;">
+  <div id="summaryOne" class="col-2 mx-4 text-center rounded-4" style="height: max-content;">
     <h3 class="p-2 rounded-top-4">riepilogo</h3>
     <p class="fs-4 text-uppercase fw-bold mb-0">totale</p>
     <p class="fs-4">{{finalPrice}} €</p>
-    <a [routerLink]="['/payment', finalPrice]"><button type="button" class="btn btn-success text-uppercase fw-bold mb-3 rounded-4">acquista ora</button></a>
+    <a [routerLink]="['/payment', finalPrice]"><button type="button" class="btn btn-colored text-uppercase fw-bold mb-3 rounded-4">acquista ora</button></a>
   </div>
 
 </div>

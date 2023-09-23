@@ -1,0 +1,38 @@
+#bookCard {
+  background-color: #006165;
+  height: 50em;
+}
+
+#cover {
+  object-fit: contain;
+  height: 50em;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  background-color: #7DA4A7;
+  width: fit-content;
+}
+
+.btn {
+  height: fit-content;
+}
+
+.greenBg {
+  color: white;
+  background-color: #278f5d;
+}
+
+.notWish {
+  color: white;
+  background-color: #BB8E1E;
+}
+
+.wish {
+  color: white;
+  background-color: rgb(242, 135, 135);
+}/*# sourceMappingURL=book-details.component.css.map */

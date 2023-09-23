@@ -1,1 +1,8 @@
-/*# sourceMappingURL=book-manager.component.css.map */
+select, form {
+  text-transform: uppercase;
+}
+
+label {
+  color: white;
+  font-weight: bold;
+}/*# sourceMappingURL=book-manager.component.css.map */

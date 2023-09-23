@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
+import { ApiShelterService } from 'src/app/service/api-shelter.service';
 
 @Component({
   selector: 'app-user-library',
@@ -8,24 +9,42 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class UserLibraryComponent implements OnInit {
 
-  currentLibrary: any = null;
+  currentLibrary: any[] = [];
 
   libraryIsEmpty: boolean = true;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private bookService: ApiShelterService) { }
 
   ngOnInit(): void {
     this.getCurrentLibrary();
   }
 
   getCurrentLibrary(): void {
-    this.authService.getCurrentUserInfo().subscribe(response => {
-      this.currentLibrary = response.purchasedBooks;
-      console.log(this.currentLibrary)
+    this.authService.getCurrentUserInfo().subscribe(responseUser => {
 
-      if(this.currentLibrary.length > 0){
-        this.libraryIsEmpty = false;
-      }
+      this.bookService.getListOfBooks().subscribe(responseCatalog => {
+
+        const books = responseUser.purchasedBooks;
+        const catalog = responseCatalog;
+
+        if(books !== null){
+          for(let idBook of books){
+            for(let book of catalog){
+              if(book.idBook === idBook){
+                console.log(book);
+                this.currentLibrary.push(book);
+                break;
+              }
+            }
+          }
+        }
+
+        if(this.currentLibrary.length > 0){
+          this.libraryIsEmpty = false;
+        }
+
+      });
+
     });
   }
 }

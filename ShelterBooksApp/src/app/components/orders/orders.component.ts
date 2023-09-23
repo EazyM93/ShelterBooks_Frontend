@@ -33,6 +33,7 @@ export class OrdersComponent implements OnInit {
 
   deploy(idOrder: string): void {
     this.orderService.deployOrder(idOrder).subscribe(() => {
+      this.orders.length = 0;
       this.getOrders();
     });
   }

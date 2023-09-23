@@ -15,6 +15,10 @@ export class ApiShelterService {
     return this._http.get<any>(`${this.BooksUrl}/idBook/${idBook}`);
   }
 
+  getListOfBooks(): Observable<any> {
+    return this._http.get<any>(`${this.BooksUrl}/getAllBooks`);
+  }
+
   getBooks(
     pageNumber: number,
     sort: string

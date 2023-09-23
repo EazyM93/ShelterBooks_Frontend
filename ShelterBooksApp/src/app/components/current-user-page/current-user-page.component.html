@@ -1,12 +1,12 @@
 <div *ngIf="role === 'ADMIN'">
-  <div class="w-25 d-none d-lg-block p-3">
+  <div class="w-25 d-none d-lg-block p-3 rounded-4 colored">
     <label for="adminMail" class="form-label">admin email</label>
     <input type="text" class="form-control mb-3" id="adminMail" aria-describedby="adminMail" [(ngModel)]="email" name="adminMail">
     <label for="adminPassword" class="form-label">admin password</label>
     <input type="text" class="form-control mb-3" id="adminPassword" aria-describedby="adminPassword" [(ngModel)]="password" name="adminPassword">
     <button type="btn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#submitAdmin">Conferma Modifiche</button>
   </div>
-  <div class="w-100 d-lg-none p-3 text-center">
+  <div class="w-100 d-lg-none p-3 text-center ">
     <label for="adminMail" class="form-label">admin email</label>
     <input type="text" class="form-control mb-3" id="adminMail" aria-describedby="adminMail" [(ngModel)]="email" name="adminMail">
     <label for="adminPassword" class="form-label">admin password</label>
@@ -38,8 +38,8 @@
   </div>
 </div>
 
-<div *ngIf="role === 'USER'">
-  <div class="row row-cols-3">
+<div *ngIf="role === 'USER'" class="colored rounded-4 p-3">
+  <div class="row row-cols-lg-3 row-cols-2 text-center text-lg-start mb-5">
     <div>
       <label for="email" class="form-label">email</label>
       <input type="text" class="form-control mb-3 rounded-4" id="email" aria-describedby="email" [(ngModel)]="email" name="email">
@@ -53,7 +53,7 @@
       <input type="text" class="form-control mb-3 rounded-4" id="surname" aria-describedby="surname" [(ngModel)]="surname" name="surname">
     </div>
     <div>
-      <label for="image" class="form-label">immagine profilo</label>
+      <label for="image" class="form-label">immagine </label>
       <input type="text" class="form-control mb-3 rounded-4" id="image" aria-describedby="image" [(ngModel)]="image" name="image">
     </div>
     <div>
@@ -84,8 +84,8 @@
 
   </div>
 
-  <div class="d-flex align-items-center">
-    <button type="btn" class="btn btn-success me-3 rounded-4" data-bs-toggle="modal" data-bs-target="#submitUser">Conferma Modifiche</button>
+  <div class="d-flex flex-column align-items-center row row-cols-2">
+    <button type="btn" class="btn btn-success mb-3 rounded-4" data-bs-toggle="modal" data-bs-target="#submitUser">Conferma Modifiche</button>
     <button type="btn" class="btn btn-danger rounded-4" data-bs-toggle="modal" data-bs-target="#cancelUser">Cancella Profilo</button>
   </div>
 
@@ -93,13 +93,13 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">MODIFICHE USER</h5>
+          <h5 class="modal-title text-black">MODIFICHE USER</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form>
 
           <div class="modal-body">
-            <p class="mb-1">Sicuro di voler inviare queste modifiche?</p>
+            <p class="mb-1 text-black">Sicuro di voler inviare queste modifiche?</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
@@ -116,13 +116,13 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">CANCELLAZIONE PROFILO</h5>
+          <h5 class="modal-title text-black">CANCELLAZIONE PROFILO</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form>
 
           <div class="modal-body">
-            <p class="mb-1">Sicuro di voler eliminare il tuo profilo?</p>
+            <p class="mb-1 text-black">Sicuro di voler eliminare il tuo profilo?</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>

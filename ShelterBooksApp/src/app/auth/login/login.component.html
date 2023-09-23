@@ -1,18 +1,18 @@
-<div class = "container-fluid text-center pt-3">
+<div class = "container-fluid text-center pt-3 colored rounded-4 py-2">
   <div class="login-container">
     <div class="login-header mb-5">
         <h2 class="text-white">effettua l'accesso</h2>
     </div>
     <div class="login-form w-50 d-none d-lg-block container">
         <div class="form-group mb-3">
-            <label for="email" class="form-label text-white">Email</label><br>
-            <input type="email" class="form-control border border-dark" id="email" [(ngModel)]="email"/>
+            <label for="emailOne" class="form-label text-white">Email</label><br>
+            <input type="email" class="form-control border border-dark" id="emailOne" [(ngModel)]="email"/>
         </div>
         <div class="form-group mb-3">
-            <label for="password" class="form-label text-white">Password</label><br>
-            <input type="password" class="form-control border border-dark" id="password" [(ngModel)]="password" />
+            <label for="passwordOne" class="form-label text-white">Password</label><br>
+            <input type="password" class="form-control border border-dark" id="passwordOne" [(ngModel)]="password" />
         </div>
-        <button type="submit" class="btn mb-2" (click)="login()">Accedi</button>
+        <button type="submit" class="btn btn-colored mb-2" (click)="login()">Accedi</button>
         <div><p>Se non fai parte della famiglia, <a href="./register">registrati qui</a>.</p></div>
         <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
     </div>
@@ -25,7 +25,7 @@
           <label for="password" class="form-label text-white">Password</label><br>
           <input type="password" class="form-control border border-dark" id="password" [(ngModel)]="password" />
       </div>
-      <button type="submit" class="btn mb-2" (click)="login()">Accedi</button>
+      <button type="submit" class="btn btn-colored mb-2" (click)="login()">Accedi</button>
       <div><p>Se non fai parte della famiglia, <a href="./register">registrati qui</a>.</p></div>
       <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
     </div>

@@ -1,0 +1,9 @@
+img {
+  object-fit: contain;
+  height: 150px;
+  width: 150px;
+}
+
+#delete {
+  background-color: rgb(242, 135, 135);
+}/*# sourceMappingURL=user-list.component.css.map */

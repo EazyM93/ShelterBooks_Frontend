@@ -1,10 +1,10 @@
-#summary{
+#summary, #summaryOne{
   background-color: white;
   padding: 0;
 }
 
-#summary h3{
-  background-color: #006165;
+#summary h3, #summaryOne h3{
+  background-color: #6B2737;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -14,6 +14,15 @@
   background-color: white;
 }
 
-#remove{
+#remove, #removeOne{
   color: red;
+}
+
+.borderColored{
+  border: #ECB9B1 2px solid;
+}
+
+.btn-colored{
+  background-color: #ECB9B1;
+  color: white;
 }

@@ -1,28 +1,28 @@
 <div class="d-flex mb-3">
 
-  <select id="filters" class="form-select text-start me-3 rounded-4" aria-label="genre" [(ngModel)]="filterUsed" name="filters" (ngModelChange)="onFilterChange()">
+  <select id="filters" class="form-select text-start me-3 rounded-4 borderColored" aria-label="genre" [(ngModel)]="filterUsed" name="filters" (ngModelChange)="onFilterChange()">
     <option value="title">titolo</option>
     <option value="isbn">isbn</option>
     <option value="author">autore</option>
     <option value="publisher">editore</option>
   </select>
 
-  <input type="text" class="form-control rounded-4" id="title" aria-describedby="title" [(ngModel)]="searchBox" name="title" (ngModelChange)="onSearchInputChange()" placeholder="scrivi cosa stai cercando" autocomplete="off">
+  <input type="text" class="form-control rounded-4 borderColored" id="title" aria-describedby="title" [(ngModel)]="searchBox" name="title" (ngModelChange)="onSearchInputChange()" placeholder="scrivi cosa stai cercando" autocomplete="off">
 
 </div>
 
 <div class="d-flex">
   <div class="d-flex flex-column align-items-center me-3">
     <label for="priceMin" class="form-label m-0 text-center text-white">Prezzo Minimo</label>
-    <input type="text" class="form-control rounded-4 text-center" id="priceMin" aria-describedby="priceMin" [(ngModel)]="priceMin" (ngModelChange)="onSearchInputChange()" name="priceMin" placeholder="min" autocomplete="off">
+    <input type="text" class="form-control rounded-4 text-center borderColored" id="priceMin" aria-describedby="priceMin" [(ngModel)]="priceMin" (ngModelChange)="onSearchInputChange()" name="priceMin" placeholder="min" autocomplete="off">
   </div>
   <div class="d-flex flex-column align-items-center me-3">
     <label for="priceMax" class="form-label m-0 text-center text-white">Prezzo Massimo</label>
-    <input type="text" class="form-control rounded-4 text-center" id="priceMax" aria-describedby="priceMax" [(ngModel)]="priceMax" (ngModelChange)="onSearchInputChange()" name="priceMax" placeholder="max" autocomplete="off">
+    <input type="text" class="form-control rounded-4 text-center borderColored" id="priceMax" aria-describedby="priceMax" [(ngModel)]="priceMax" (ngModelChange)="onSearchInputChange()" name="priceMax" placeholder="max" autocomplete="off">
   </div>
-  <div class="d-flex flex-column align-items-center me-3">
+  <div class="d-flex flex-column align-items-center justify-content-end me-3">
     <label for="genre" class="form-label m-0 text-center text-white">Genere</label>
-    <select id="genre" class="form-select text-center rounded-4" aria-label="genre" [(ngModel)]="genreFilter" name="genre" (ngModelChange)="onSearchInputChange()">
+    <select id="genre" class="form-select text-center rounded-4 borderColored" aria-label="genre" [(ngModel)]="genreFilter" name="genre" (ngModelChange)="onSearchInputChange()">
       <option selected></option>
       <option value="ART">arte</option>
       <option value="ASTRONOMY">astronomia</option>
@@ -75,15 +75,18 @@
   </div>
 </div>
 
-<div class="row row-cols-5 d-lg-flex d-none mt-5 d-flex justify-content-center" style="height: 600px;">
-  <div *ngFor="let book of booksArray">
-    <div class="mb-5 text-center">
-      <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" class="rounded-4 book-cover" alt=".."></a>
+<div class="d-lg-flex d-none mt-5 d-flex flex-column">
+  <div id="book-carousel" class="row row-cols-5 borderColored rounded-4 pt-4" style="height: 650px;">
+    <div *ngFor="let book of booksArray">
+      <div class="mb-4 text-center">
+        <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" class="rounded-4 book-cover" alt=".."></a>
+      </div>
     </div>
   </div>
+
   <div class="d-flex align-items-center justify-content-center">
     <button type="button" class="btn text-white fs-1 p-0 border border-0 me-3" [disabled]="currentPage === 0" (click)="previous()"><i class="bi bi-caret-left-square-fill p-0"></i></button>
-    <p class="m-0 p-0 text-white fs-2">{{currentPage}}</p>
+    <p class="m-0 p-0 page-number fs-2">{{currentPage}}</p>
     <button type="button" class="btn text-white fs-1 p-0 border border-0 ms-3" [disabled]="currentPage === totalPages" (click)="next()"><i class="bi bi-caret-right-square-fill"></i></button>
   </div>
 </div>
@@ -91,12 +94,12 @@
 <div class="mt-3 d-lg-none">
   <div class="d-flex align-items-center justify-content-center mb-3">
     <button type="button" class="btn text-white fs-1 p-0 border border-0 me-3" [disabled]="currentPage === 0" (click)="previous()"><i class="bi bi-caret-left-square-fill p-0"></i></button>
-    <p class="m-0 p-0 text-white fs-2">{{currentPage}}</p>
+    <p class="m-0 p-0 page-number fs-2">{{currentPage}}</p>
     <button type="button" class="btn text-white fs-1 p-0 border border-0 ms-3" [disabled]="currentPage === totalPages" (click)="next()"><i class="bi bi-caret-right-square-fill"></i></button>
   </div>
-  <div class="row row-cols-2" style="height: 600px;">
+  <div id="book-carouselTwo" class="row row-cols-2 rounded-4 mx-1 pt-4" style="height: max-content">
     <div *ngFor="let book of booksArray">
-      <div class="mb-5 text-center">
+      <div class="mb-5 text-center d-flex justify-content-center">
         <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" class="rounded-4 book-cover" alt=".."></a>
       </div>
     </div>

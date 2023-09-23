@@ -21,7 +21,7 @@ export class CatalogComponent implements OnInit {
   genreFilter: string = '';
 
   priceMin: number = 0;
-  priceMax: number = 0;
+  priceMax: number = 100;
 
   currentPage: number = 0;
   totalPages: number = 0;
@@ -30,17 +30,6 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBookListByTitle();
-  }
-
-  setInitialMaxPrice(): void {
-    let biggestPrice: number = 0;
-    for(let book of this.booksArray) {
-      let currentPrice = book.price;
-      if(currentPrice > biggestPrice) {
-        biggestPrice = currentPrice;
-      }
-    }
-    this.priceMax = biggestPrice;
   }
 
   onFilterChange(): void {
@@ -76,7 +65,6 @@ export class CatalogComponent implements OnInit {
         const pageSize = response.size;
         (response.content.length === 0) ? this.totalPages = 0 : this.totalPages = Math.ceil(totalItems / pageSize) - 1;
         this.booksArray=response.content;
-        this.setInitialMaxPrice();
       }
     );
   }
@@ -102,7 +90,7 @@ export class CatalogComponent implements OnInit {
     this.publisherFilter = '';
     this.genreFilter = '';
     this.priceMin = 0;
-    this.priceMax = 0;
+    this.priceMax = 100;
     this.getBookListByTitle();
   }
 

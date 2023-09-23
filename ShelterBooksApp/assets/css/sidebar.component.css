@@ -1,0 +1,32 @@
+#main-container {
+  background-color: #6B2737;
+  color: white !important;
+}
+
+h4, h5 {
+  text-transform: uppercase;
+}
+
+.rw {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.rw:hover {
+  background-color: #a4afb0;
+  filter: brightness(90%);
+}
+
+#logout {
+  color: rgb(242, 135, 135);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#logout:hover {
+  background-color: #a4afb0;
+  filter: brightness(90%);
+}
+
+.active {
+  background-color: #a4afb0;
+}/*# sourceMappingURL=sidebar.component.css.map */
