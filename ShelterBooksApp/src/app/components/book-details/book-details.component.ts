@@ -12,6 +12,8 @@ import { UserServiceService } from 'src/app/service/user-service.service';
 })
 export class BookDetailsComponent implements OnInit {
 
+  userLogged: boolean = false;
+
   idBook: string = '';
   isbn: string = '';
 	title: string = '';
@@ -62,6 +64,8 @@ export class BookDetailsComponent implements OnInit {
     });
 
     this.isBookInWishListMethod();
+
+    this.userLogged = localStorage.getItem('token') !== null;
 
   }
 

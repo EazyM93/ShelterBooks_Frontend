@@ -6,12 +6,15 @@
     <div id="info" class="p-3 text-white overflow-auto">
         <h2 class="p-1 rounded-4 mb-4">{{title}} ({{author}})</h2>
 
-        <div *ngIf="!isBookInWishlist; else isInWish">
-          <button type="button" class="btn notWish rounded-4 mb-3" (click)="addBookToWishList()">Aggiungi alla wishlist</button>
+        <div *ngIf="userLogged === true">
+          <div *ngIf="!isBookInWishlist; else isInWish">
+            <button type="button" class="btn notWish rounded-4 mb-3" (click)="addBookToWishList()">Aggiungi alla wishlist</button>
+          </div>
+          <ng-template #isInWish>
+            <button type="button" class="btn wish rounded-4 mb-3" (click)="removeBookFromWishList()">Rimuovi dalla wishlist</button>
+          </ng-template>
         </div>
-        <ng-template #isInWish>
-          <button type="button" class="btn wish rounded-4 mb-3" (click)="removeBookFromWishList()">Rimuovi dalla wishlist</button>
-        </ng-template>
+
 
         <p class="mb-3 fs-5">{{description}}</p>
         <p class="mb-3 fs-4"><span class="fw-bold">ISBN</span>: {{isbn}}</p>
@@ -22,15 +25,17 @@
 
         <div class="d-flex flex-column align-items-start mb-3 justify-content-center">
           <p class="text-capitalize fs-2 me-3"><span class="fw-bold">Prezzo Cartaceo</span>: {{price}}€</p>
-          <div class="d-flex align-items-center">
+          <div *ngIf="userLogged === true" class="d-flex align-items-center">
             <button type="button" class="btn greenBg me-3 rounded-4" (click)="addBookToCart()" [disabled]="availableCopies === 0">Aggiungi al carrello</button>
-            <p class="m-0">Prodotto momentaneamente non disponibile!</p>
+            <div *ngIf="availableCopies === 0">
+              <p class="m-0 bg-danger rounded-4 p-2">Prodotto momentaneamente non disponibile!</p>
+            </div>
           </div>
 
         </div>
-        <div class="d-flex flex-column align-items-start mb-3 justify-content-center">
+        <div  class="d-flex flex-column align-items-start mb-3 justify-content-center">
           <p class="text-capitalize fs-2 me-3"><span class="fw-bold">Prezzo Ebook</span>: {{ebookPrice}}€</p>
-          <button type="button" class="btn btn-primary me-3 rounded-4">Aggiungi al carrello</button>
+          <button *ngIf="userLogged === true" type="button" class="btn btn-primary me-3 rounded-4">Aggiungi al carrello</button>
         </div>
     </div>
   </div>
