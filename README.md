@@ -17,7 +17,7 @@ Il progetto di base è stato generato utilizzando ${\color{green}Spring \space I
 
 Assicurarsi di aver installato correttamente ${\color{orange}Lombok}$ nel proprio ambiente di sviluppo : https://projectlombok.org
 
-Assicurarsi di avere importato le seguenti dependecy nel pom.xml, reperibili su Maven Repository : https://mvnrepository.com
+Assicurarsi di avere importato le seguenti ${\color{yellow}dependecy}$ nel pom.xml, reperibili su Maven Repository : https://mvnrepository.com
 
 
 - https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
