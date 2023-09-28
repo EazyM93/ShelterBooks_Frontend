@@ -9,7 +9,7 @@ L'applicativo è stato sviluppato utilizzando nel front-end ${\color{yellow}Angu
 
  - <a href="#-back-end-configuration-">Back-end Configuration</a>
  - <a href="#-front-end-configuration-">Front-end Configuration</a>
- - <a href="#-funzionalità-">Funzionalità</a>
+ - <a href="#%EF%B8%8F-funzionalità-%EF%B8%8F">Funzionalità</a>
 
 💻 **BACK-END CONFIGURATION** 💻
 -----------------------------------
