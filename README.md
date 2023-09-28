@@ -15,7 +15,7 @@ Il progetto java va importato nel proprio IDE come Maven Project.
 
 Il progetto di base è stato generato utilizzando ${\color{green}Spring \space Initializr}$ : https://start.spring.io
 
-Assicurarsi di aver installato correttamente Lombok nel proprio ambiente di sviluppo : https://projectlombok.org
+Assicurarsi di aver installato correttamente ${\color{orange}Lombok}$ nel proprio ambiente di sviluppo : https://projectlombok.org
 
 Assicurarsi di avere importato le seguenti dependecy nel pom.xml, reperibili su Maven Repository : https://mvnrepository.com
 
