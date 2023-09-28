@@ -49,6 +49,7 @@ Seguire queste istruzioni per una corretta installazione
 
 Verrà installata la versione stabile più recente di Angular
 ```
+<code>npm i</code>
 
 Una volta clonato il progetto eseguire le seguenti istruzioni per avviare correttamente l'app
 ```
