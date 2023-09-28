@@ -25,7 +25,7 @@ Assicurarsi di avere importato le seguenti ${\color{yellow}dependecy}$ nel pom.x
 - https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
 - https://mvnrepository.com/artifact/javax.validation/validation-api
 
-Creare un file **env.properties** da inserire nel main del progetto java ed impostare i valori per eseguire il porgramma.
+Creare un file ${\color{yellow}env.properties}$ da inserire nel main del progetto java ed impostare i valori per eseguire il porgramma.
 I valori segnalati con * sono a discrezione dell'utente, l'importante è che ci sia coerenza con il resto dell'ambiente.
 ```
 port=3001
