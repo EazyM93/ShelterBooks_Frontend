@@ -36,3 +36,12 @@ pg_db=shelterDB
 
 ps_defaultAdmin= *
 ```
+
+👤 **FRONT-END CONFIGURATION** 👤
+----------------------------------
+Prima di eseguire queste istruzioni premurarsi di aver installato correttamente ${\color{yellow}Angular}$ sul proprio dispositivo.
+Seguire queste istruzioni per una corretta installazione
+
+```
+1. Installare Node.js & npm ( verificare sui relativi siti come fare a seconda del proprio OS )
+```
