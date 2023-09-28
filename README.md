@@ -19,7 +19,6 @@ Assicurarsi di aver installato correttamente ${\color{orange}Lombok}$ nel propri
 
 Assicurarsi di avere importato le seguenti ${\color{yellow}dependecy}$ nel pom.xml, reperibili su Maven Repository : https://mvnrepository.com
 
-
 - https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
 - https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
 - https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
