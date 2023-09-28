@@ -47,5 +47,10 @@ Seguire queste istruzioni per una corretta installazione
 
 2. npm install -g @angular/cli
 
-Installerà la versione stabile più recente di Angular
+Verrà installata la versione stabile più recente di Angular
+```
+
+Una volta clonato il progetto eseguire le seguenti istruzioni per avviare correttamente l'app
+```
+1. Aprire il terminale ed immettere <code>npm i</code>
 ```
