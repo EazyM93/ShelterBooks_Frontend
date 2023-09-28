@@ -61,3 +61,4 @@ Una volta clonato il progetto eseguire le seguenti istruzioni per avviare corret
 
 ⌨️ **FUNZIONALITÀ** ⌨️
 ---------------------
+<img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/vdei0f9uoksemn85xgpt">
