@@ -9,6 +9,9 @@ L'applicativo è stato sviluppato utilizzando nel front-end ${\color{yellow}Angu
 
 Per eseguire l'app configurare il proprio ambiente come segue
 
+ - <a href="#-"Back-end Configuration
+
+
 💻 **BACK-END CONFIGURATION** 💻
 -----------------------------------
 Il progetto java va importato nel proprio IDE come Maven Project.
