@@ -17,8 +17,8 @@ Il progetto di base è stato generato utilizzando Spring Initializr : https://st
 
 Assicurarsi di aver installato correttamente Lombok nel proprio ambiente di sviluppo : https://projectlombok.org
 
-Assicurarsi di avere importato le seguenti dependecy reperibili su Maven Repository : https://mvnrepository.com
-(inserire nel pom.xml)
+Assicurarsi di avere importato le seguenti dependecy nel pom.xml, reperibili su Maven Repository : https://mvnrepository.com
+
 
 - https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
 - https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
