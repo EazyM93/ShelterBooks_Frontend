@@ -9,7 +9,7 @@ L'applicativo è stato sviluppato utilizzando nel front-end ${\color{yellow}Angu
 
  - <a href="#-back-end-configuration-">Back-end Configuration</a>
  - <a href="#-front-end-configuration-">Front-end Configuration</a>
-
+ - <a href="#-funzionalità-">Front-end Configuration</a>
 
 💻 **BACK-END CONFIGURATION** 💻
 -----------------------------------
@@ -58,3 +58,6 @@ Una volta clonato il progetto eseguire le seguenti istruzioni per avviare corret
 3. Se non si dovesse avviare in automtico il browser, accedere tramite l'indirizzo http://localhost:4200
 
 <a href="#">TORNA SU</a>
+
+⌨️ **FUNZIONALITÀ** ⌨️
+---------------------
