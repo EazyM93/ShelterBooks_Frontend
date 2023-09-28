@@ -10,6 +10,6 @@ L'applicativo è stato sviluppato utilizzando nel front-end Angular e Bootstrap,
 Per eseguire l'app configurare il proprio ambiente come segue
 
 ```
-**BACK-END**
+ **BACK-END**
 
 Creare un file env.properties ed impostare i valori per eseguire il porgramma.
