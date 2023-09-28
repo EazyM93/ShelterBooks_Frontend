@@ -73,3 +73,13 @@ Quando un utente o l'admin effettuano il login, la sidebar cambierà in base all
  <img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/g2kkcr8ngmrxgjkythnj">
  <img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/ygs2eskgdaym7kmfik3z">
 </div>
+
+Una delle funzionalità più interessanti è la ricerca in tempo reale dei libri all'interno del catalogo
+
+<img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/u9xcwuqkpxbiy0ifxs7n">
+
+Inoltre è stato integrato il pagamento tramite paypal
+
+<img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/boyk2losggyy7azl1wzl">
+
+Il resto delle funzionalità riguardano la gestione del sito da parte dell'admin e la gestione dei propri libri da parte degli utenti. Il tutto è stato realizzato in full responsive e con la possibilità di integrare o rimuovere facilmente funzionalità.
