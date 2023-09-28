@@ -23,5 +23,4 @@ pg_password= *
 pg_db=shelterDB
 
 ps_defaultAdmin= *
-
 ```
