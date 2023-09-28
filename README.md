@@ -13,7 +13,15 @@ Per eseguire l'app configurare il proprio ambiente come segue
 -----------------------------------
 Il progetto java va importato nel proprio IDE come Maven Project.
 
-Assicurarsi di avere inmportato le seguenti dependecy reperibili su Maven Repository : https://mvnrepository.com
+Il progetto di base è stato generato utilizzando Spring Initializr : https://start.spring.io
+
+Assicurarsi di avere importato le seguenti dependecy reperibili su Maven Repository : https://mvnrepository.com
+(inserire nel pom.xml)
+
+- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
+- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
+- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
+- https://mvnrepository.com/artifact/javax.validation/validation-api
 
 Creare un file **env.properties** da inserire nel main del progetto java ed impostare i valori per eseguire il porgramma.
 I valori segnalati con * sono a discrezione dell'utente, l'importante è che ci sia coerenza con il resto dell'ambiente.
