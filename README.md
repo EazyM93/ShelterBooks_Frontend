@@ -5,7 +5,7 @@ Link alla repository back-end : https://github.com/EazyM93/ShelterBooks_Capstone
 
 Benvenuti in ShelterBooks, sito e-commerce di libri che permettesse all'utente di tenere traccia dei suoi acquisti sottoforma di libreria virtuale 📚
 
-L'applicativo è stato sviluppato utilizzando nel front-end Angular e Bootstrap, mentre per il back-end Java, Spring Boot e PostgreSql ☕️
+L'applicativo è stato sviluppato utilizzando nel front-end ${\color{yellow}Angular}$ e ${\color{yellow}Bootstrap}$, mentre per il back-end ${\color{aqua}Java}$, ${\color{aqua}Spring \space Boot}$ e ${\color{aqua}PostgreSql}$ ☕️
 
 Per eseguire l'app configurare il proprio ambiente come segue
 
