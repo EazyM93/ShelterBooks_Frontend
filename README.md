@@ -9,8 +9,19 @@ L'applicativo è stato sviluppato utilizzando nel front-end Angular e Bootstrap,
 
 Per eseguire l'app configurare il proprio ambiente come segue
 
-```
-💻 **BACK-END** 💻
+💻 **BACK-END CONFIGURATION** 💻
+-----------------------------------
 
-Creare un file env.properties ed impostare i valori per eseguire il porgramma.
+Creare un file env.properties da inserire nel main del progetto java ed impostare i valori per eseguire il porgramma.
+I valori segnalati con * sono a discrezione dell'utente, l'importante è che ci sia coerenza con il resto dell'ambiente.
+```
+port=3001
+
+jwt_secret= *
+pg_username=postgres
+pg_password= *
+pg_db=shelterDB
+
+ps_defaultAdmin= *
+
 ```
