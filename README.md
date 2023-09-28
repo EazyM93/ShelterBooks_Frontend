@@ -13,7 +13,7 @@ Per eseguire l'app configurare il proprio ambiente come segue
 -----------------------------------
 Il progetto java va importato nel proprio IDE come Maven Project.
 
-Il progetto di base è stato generato utilizzando <span style="color: #008000;">Spring Initializr</span> : https://start.spring.io
+Il progetto di base è stato generato utilizzando <code style="color: green;">Spring Initializr</code> : https://start.spring.io
 
 Assicurarsi di aver installato correttamente Lombok nel proprio ambiente di sviluppo : https://projectlombok.org
 
