@@ -61,6 +61,9 @@ Una volta clonato il progetto eseguire le seguenti istruzioni per avviare corret
 
 ⌨️ **FUNZIONALITÀ** ⌨️
 ---------------------
+
+Quando l'applicativo verrà avviato ci si ritroverà sulla homepage dove si trovano le ultime novità e i bestseller del sito.
+
 <img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/vdei0f9uoksemn85xgpt">
 <div>
  <img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/g2kkcr8ngmrxgjkythnj">
