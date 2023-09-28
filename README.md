@@ -15,7 +15,7 @@ Il progetto java va importato nel proprio IDE come Maven Project.
 
 Assicurarsi di avere inmportato le seguenti dependecy reperibili su Maven Repository : https://mvnrepository.com
 
-Creare un file env.properties da inserire nel main del progetto java ed impostare i valori per eseguire il porgramma.
+Creare un file **env.properties** da inserire nel main del progetto java ed impostare i valori per eseguire il porgramma.
 I valori segnalati con * sono a discrezione dell'utente, l'importante è che ci sia coerenza con il resto dell'ambiente.
 ```
 port=3001
