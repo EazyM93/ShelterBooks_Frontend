@@ -40,6 +40,7 @@ pg_db=shelterDB
 
 ps_defaultAdmin= *
 ```
+<a href="#">TORNA SU</a>
 
 👤 **FRONT-END CONFIGURATION** 👤
 ----------------------------------
@@ -57,3 +58,5 @@ Una volta clonato il progetto eseguire le seguenti istruzioni per avviare corret
 2. Avviare l'app Angular nel proprio IDE <code>ng s -o</code>
 
 3. Se non si dovesse avviare in automtico il browser, accedere tramite l'indirizzo http://localhost:4200
+
+<a href="#">TORNA SU</a>
