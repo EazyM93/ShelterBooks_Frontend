@@ -46,5 +46,6 @@ Seguire queste istruzioni per una corretta installazione
 1. Installare Node.js & npm ( verificare sui relativi siti come fare a seconda del proprio OS )
 
 2. npm install -g @angular/cli
+
 Installerà la versione stabile più recente di Angular
 ```
