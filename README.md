@@ -9,7 +9,8 @@ L'applicativo è stato sviluppato utilizzando nel front-end ${\color{yellow}Angu
 
 Per eseguire l'app configurare il proprio ambiente come segue
 
- - <a href="#-"Back-end Configuration
+ - <a href="#-back-end-configuration-">Back-end Configuration</a>
+ - <a href="#-front-end-configuration-">Front-end Configuration</a>
 
 
 💻 **BACK-END CONFIGURATION** 💻
