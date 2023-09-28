@@ -7,8 +7,6 @@ Benvenuti in ShelterBooks, sito e-commerce di libri che permettesse all'utente d
 
 L'applicativo è stato sviluppato utilizzando nel front-end ${\color{yellow}Angular}$ e ${\color{yellow}Bootstrap}$, mentre per il back-end ${\color{aqua}Java}$, ${\color{aqua}Spring \space Boot}$ e ${\color{aqua}PostgreSql}$ ☕️
 
-Per eseguire l'app configurare il proprio ambiente come segue
-
  - <a href="#-back-end-configuration-">Back-end Configuration</a>
  - <a href="#-front-end-configuration-">Front-end Configuration</a>
 
