@@ -42,16 +42,11 @@ ps_defaultAdmin= *
 Prima di eseguire queste istruzioni premurarsi di aver installato correttamente ${\color{yellow}Angular}$ sul proprio dispositivo.
 Seguire queste istruzioni per una corretta installazione
 
-```
 1. Installare Node.js & npm ( verificare sui relativi siti come fare a seconda del proprio OS )
 
-2. npm install -g @angular/cli
-
-Verrà installata la versione stabile più recente di Angular
-```
-<code>npm i</code>
+2. Installare la versione stabile più recente di Angular <code>npm install -g @angular/cli</code>
 
 Una volta clonato il progetto eseguire le seguenti istruzioni per avviare correttamente l'app
-```
+
 1. Aprire il terminale ed immettere <code>npm i</code>
-```
+
