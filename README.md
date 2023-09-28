@@ -50,3 +50,6 @@ Una volta clonato il progetto eseguire le seguenti istruzioni per avviare corret
 
 1. Aprire il terminale ed immettere <code>npm i</code>
 
+2. Avviare l'app Angular nel proprio IDE <code>ng s -o</code>
+
+3. Se non si dovesse avviare in automtico il browser, accedere tramite l'indirizzo http://localhost:4200
