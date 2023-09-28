@@ -63,8 +63,12 @@ Una volta clonato il progetto eseguire le seguenti istruzioni per avviare corret
 ---------------------
 
 Quando l'applicativo verrà avviato ci si ritroverà sulla homepage dove si trovano le ultime novità e i bestseller del sito.
+A sinistra abbiamo una sidebar dove tutti gli utenti o i visitatori potranno esplorare il sito.
 
 <img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/vdei0f9uoksemn85xgpt">
+
+Quando un utente o l'admin effettuano il login, la sidebar cambierà in base alla tipologia di user loggato, permettendo di accedere a pagine e funzionalità diverse.
+
 <div>
  <img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/g2kkcr8ngmrxgjkythnj">
  <img src="https://res.cloudinary.com/drjlfkl1v/image/upload/f_auto,q_auto/ygs2eskgdaym7kmfik3z">
