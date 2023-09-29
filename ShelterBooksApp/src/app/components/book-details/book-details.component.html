@@ -26,10 +26,12 @@
         <div class="d-flex flex-column align-items-start mb-3 justify-content-center">
           <p class="text-capitalize fs-2 me-3"><span class="fw-bold">Prezzo Cartaceo</span>: {{price}}€</p>
           <div *ngIf="userLogged === true" class="d-flex align-items-center">
-            <button type="button" class="btn greenBg me-3 rounded-4" (click)="addBookToCart()" [disabled]="availableCopies === 0">Aggiungi al carrello</button>
-            <div *ngIf="availableCopies === 0">
+            <div *ngIf="availableCopies === 0; else showAddCart">
               <p class="m-0 bg-danger rounded-4 p-2">Prodotto momentaneamente non disponibile!</p>
             </div>
+            <ng-template #showAddCart>
+              <button type="button" class="btn greenBg me-3 rounded-4" (click)="addBookToCart()">Aggiungi al carrello</button>
+            </ng-template>
           </div>
 
         </div>
