@@ -111,7 +111,11 @@
 
 
   </div>
-  <div *ngIf="!userLogged">
-        <a class="nav-link" [routerLink]="['login']"><button id="login" type="button" class="btn text-white rw"><i class="bi bi-person-lock fs-3"></i>login</button></a>
+    <div *ngIf="!userLogged" class="d-flex flex-column align-items-center">
+      <div class=" border-bottom">
+        <a class="nav-link rw rounded-4 mt-3 mb-3 px-3 d-flex align-items-center" [routerLink]="['catalog']" routerLinkActive="active"><i class="bi bi-collection-fill me-3 fs-4"></i>catalogo</a>
       </div>
+
+      <a class="nav-link" [routerLink]="['login']"><button id="login" type="button" class="btn text-white rw"><i class="bi bi-person-lock fs-3"></i>login</button></a>
+    </div>
 </div>
