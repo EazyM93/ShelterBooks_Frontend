@@ -1,9 +1,5 @@
 <div class="d-none d-lg-block">
-  <div *ngIf="wishlistIsEmpty; else isNotEmpty" class="text-center">
-    <p class="text-white fw-bold fs-1">La lista è vuota</p>
-  </div>
-
-  <ng-template #isNotEmpty>
+  <div *ngIf="!wishlistIsEmpty; else isNotEmpty">
     <div class="row row-cols-6 pt-4 text-center">
       <div *ngFor="let book of currentWishlist">
 
@@ -18,15 +14,15 @@
 
       </div>
     </div>
+  </div>
+
+  <ng-template #isNotEmpty>
+    <p class="fw-bold fs-1" class="text-center">La lista è vuota</p>
   </ng-template>
 </div>
 
 <div class="d-lg-none">
-  <div *ngIf="wishlistIsEmpty; else isNotEmptyTwo" class="text-center">
-    <p class="text-white fw-bold fs-1">La lista è vuota</p>
-  </div>
-
-  <ng-template #isNotEmptyTwo>
+  <div *ngIf="!wishlistIsEmpty; else isNotEmptyTwo" class="text-center">
     <div class="row row-cols-2 pt-4 text-center">
       <div *ngFor="let book of currentWishlist">
 
@@ -37,6 +33,11 @@
 
       </div>
     </div>
+  </div>
+
+  <ng-template #isNotEmptyTwo>
+    <p class="fw-bold fs-1">La lista è vuota</p>
+
   </ng-template>
 </div>
 

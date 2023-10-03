@@ -1,9 +1,5 @@
 <div class="d-none d-lg-block">
-  <div *ngIf="libraryIsEmpty; else isNotEmpty" class="text-center">
-    <p class="text-white fw-bold fs-1">La biblioteca è vuota</p>
-  </div>
-
-  <ng-template #isNotEmpty>
+  <div *ngIf="!libraryIsEmpty; else isNotEmpty">
     <div class="row row-cols-4 pt-4 text-center">
       <div *ngFor="let book of currentLibrary">
 
@@ -14,15 +10,15 @@
 
       </div>
     </div>
+  </div>
+
+  <ng-template #isNotEmpty>
+    <p class="fw-bold fs-1" class="text-center">La libreria è vuota</p>
   </ng-template>
 </div>
 
 <div class="d-lg-none">
-  <div *ngIf="libraryIsEmpty; else isNotEmptyTwo" class="text-center">
-    <p class="text-white fw-bold fs-1">La biblioteca è vuota</p>
-  </div>
-
-  <ng-template #isNotEmptyTwo>
+  <div *ngIf="libraryIsEmpty; else isNotEmptyTwo">
     <div class="row row-cols-2 pt-4 text-center">
       <div *ngFor="let book of currentLibrary">
 
@@ -33,6 +29,10 @@
 
       </div>
     </div>
+  </div>
+
+  <ng-template #isNotEmptyTwo class="text-center">
+    <p class="fw-bold fs-1">La libreria è vuota</p>
   </ng-template>
 </div>
 
