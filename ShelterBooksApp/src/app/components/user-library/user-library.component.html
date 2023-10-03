@@ -8,7 +8,7 @@
       <div *ngFor="let book of currentLibrary">
 
         <div class="mb-4">
-          <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" style="width: 150px;" alt="" class="book-cover"></a>
+          <a [routerLink]="['/bookDetails', book?.idBook]"><img [src]="book.coverLink" style="width: 150px;" alt="" class="book-cover rounded-4"></a>
         </div>
 
 

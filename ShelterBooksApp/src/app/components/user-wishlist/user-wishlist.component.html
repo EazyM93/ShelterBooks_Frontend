@@ -4,11 +4,15 @@
   </div>
 
   <ng-template #isNotEmpty>
-    <div class="row row-cols-4 pt-4 text-center">
+    <div class="row row-cols-6 pt-4 text-center">
       <div *ngFor="let book of currentWishlist">
 
-        <div class="mb-4">
-          <a [routerLink]="['/bookDetails', book?.idBook]" ><img [src]="book.coverLink" style="width: 150px;" alt="" class="book-cover"></a>
+        <div class="mb-4 d-flex flex-column align-items-center">
+          <a [routerLink]="['/bookDetails', book?.idBook]" ><img [src]="book.coverLink" style="width: 150px;" alt="" class="book-cover rounded-4 mb-2"></a>
+          <div class="d-flex justify-content-between" style="width: 130px;">
+            <button type="button" class="btn btn-success fs-3"><i class="bi bi-cart-plus"></i></button>
+            <button type="button" class="btn btn-danger fs-3"><i class="bi bi-bag-dash-fill"></i></button>
+          </div>
         </div>
 
 
