@@ -13,15 +13,15 @@
 
 <div class="d-flex">
   <div class="d-flex flex-column align-items-center me-3">
-    <label for="priceMin" class="form-label m-0 text-center text-white">Prezzo Minimo</label>
+    <label for="priceMin" class="form-label m-0 text-center">Prezzo Minimo</label>
     <input type="text" class="form-control rounded-4 text-center borderColored" id="priceMin" aria-describedby="priceMin" [(ngModel)]="priceMin" (ngModelChange)="onSearchInputChange()" name="priceMin" placeholder="min" autocomplete="off">
   </div>
   <div class="d-flex flex-column align-items-center me-3">
-    <label for="priceMax" class="form-label m-0 text-center text-white">Prezzo Massimo</label>
+    <label for="priceMax" class="form-label m-0 text-center">Prezzo Massimo</label>
     <input type="text" class="form-control rounded-4 text-center borderColored" id="priceMax" aria-describedby="priceMax" [(ngModel)]="priceMax" (ngModelChange)="onSearchInputChange()" name="priceMax" placeholder="max" autocomplete="off">
   </div>
   <div class="d-flex flex-column align-items-center justify-content-end me-3">
-    <label for="genre" class="form-label m-0 text-center text-white">Genere</label>
+    <label for="genre" class="form-label m-0 text-center">Genere</label>
     <select id="genre" class="form-select text-center rounded-4 borderColored" aria-label="genre" [(ngModel)]="genreFilter" name="genre" (ngModelChange)="onSearchInputChange()">
       <option selected></option>
       <option value="ART">arte</option>
